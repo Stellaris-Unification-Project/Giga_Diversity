@@ -1,0 +1,54 @@
+@terraforming_cost_hab = 7500 #<-- Habitat to a type of Lifeless world
+@terraforming_cost_gghab = 10000 #<-- Gas Giant Habitat to Habitable Gas Giant
+@terraforming_duration_hab = 3600 #<-- Habitat to a type of Lifeless world
+@terraforming_duration_gghab = 3600#<-- Gas Giant Habitat to Habitable Gas Giant
+
+#Gas Giant
+terraform_link = {
+	from = pc_pd_gas_giant_hab
+	to = pc_habitable_gas_giant
+   	resources = { category = terraforming cost = { energy = @terraforming_cost_gghab } }
+	duration = @terraforming_duration_gghab
+	potential = { from = { has_modifier = habitable_gas_giant_terraform } }
+	condition = { from = { has_modifier = habitable_gas_giant_terraform } }
+	effect = {
+		from = {
+			remove_modifier = habitable_gas_giant_terraform
+			set_planet_flag = giga_hab_gas_giant
+			set_planet_flag = colony_event
+			remove_planet_flag = pdhab
+			remove_planet_flag = pdhab_coldgg
+			remove_planet_flag = pdhab_hotgg
+			remove_planet_flag = pdhab_cloudlessgg
+			remove_planet_flag = pd_mining_hab
+			remove_planet_flag = pd_hab_d1
+			remove_planet_flag = pd_hab_d2
+			remove_planet_flag = pd_energy_hab
+			remove_planet_flag = pd_science_hab
+			remove_planet_flag = pd_commercial_hab
+			remove_planet_flag = pd_foundry_hab
+			remove_planet_flag = pd_farming_hab
+			remove_planet_flag = giga_terraforming_megastructure
+			remove_planet_flag = has_megastructure
+			remove_planet_flag = megastructure
+			clear_deposits = yes
+			reroll_deposits = yes
+			add_deposit = d_fluffy_plains
+			random_list = {
+				2 = { while = { count = 1 add_deposit = d_gassy_rivers } }
+				2 = { while = { count = 1 add_deposit = d_mote_cloud } }
+				2 = { while = { count = 1 add_deposit = d_floaters } }
+				1 = { while = { count = 2 add_deposit = d_gassy_rivers } }
+				1 = { while = { count = 2 add_deposit = d_mote_cloud } }
+				1 = { while = { count = 2 add_deposit = d_floaters } }
+			}
+			remove_modifier = helioforming_candidate
+			set_planet_flag = used_to_be_gasgiant
+		}
+		owner = {
+			subtract_variable = { which = habitat_count value = 1 }
+			giga_calculate_allowed_habitats = yes
+		}
+	}
+	ai_weight = { weight = 0 }
+}

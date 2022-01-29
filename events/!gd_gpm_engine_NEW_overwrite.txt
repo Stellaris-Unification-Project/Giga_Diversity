@@ -1,0 +1,153 @@
+namespace = gpm_engine
+
+#Adding a planet flag
+#gdgpmmodifiers
+
+# MASTER EVENT
+# This one governs everything
+planet_event = {
+	id = gpm_engine.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_planet_flag = forbid_guillis_planet_modifiers }
+		NOT = { solar_system = { has_star_flag = gpm_precursor_machine_system } }
+	}
+
+	immediate = {
+if = {
+	limit = { not = { has_planet_flag = gdgpmmodifiers } }
+		set_planet_flag = gdgpmmodifiers
+		# set default base modifiier multipliers
+		set_variable = { which = gpm_planet_size_multiplier value = 1 }
+		set_variable = { which = gpm_planet_size_multiplier_wonders value = 1 }
+		set_variable = { which = gpm_planet_size_multiplier_precursor value = 1 }
+
+		## Precursor Planets
+		if = {
+			limit = {
+				gpm_is_a_precursor_world = yes
+				NOT = { gpm_has_precursor_modifiers = yes }
+			}
+			# Planet Modifier Scaling
+			if = {
+				limit = { NOT = { has_global_flag = gpm_scaling_multiplier_disabled } }
+				gpm_scale_planet_modifiers = yes
+			}
+			gpm_roll_precursor_modifiers = yes
+			if = {
+				limit = { gpm_is_planet_class_normal_habitable = yes }
+				gpm_spawn_precursor_features = yes
+			}
+		}
+
+	
+		## STARS 
+		if = {
+			limit = { gpm_is_planet_class_star = yes }
+			planet_event = { id = gpm_engine.10 }
+		}
+		
+		## ASTEROIDS 
+		if = {
+			limit = { gpm_is_planet_class_asteroid = yes }
+			planet_event = { id = gpm_engine.20 }
+		}
+		
+		## GAS GIANTS 
+		if = {
+			limit = { gpm_is_planet_class_gas_giant = yes }
+			planet_event = { id = gpm_engine.30 }
+		}
+		
+		## NORMAL UNINHABITABLE PLANETS (Barren, Frozen, Toxic, Molten)
+		if = {
+			limit = { gpm_is_planet_class_normal_uninhabitable = yes }
+			planet_event = { id = gpm_engine.40 }
+		}
+		
+		## NUKED PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_nuked = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.50 }
+		}
+		
+		## NORMAL HABITABLE PLANETS (Colonizable standard planets)
+		if = {
+			limit = { gpm_is_planet_class_normal_habitable = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.60 }
+		}
+		
+		## CITY PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_city = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.70 }
+		}
+		
+		## MACHINE PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_machine = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.80 }
+		}
+		
+		## HIVE PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_hive = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.90 }
+		}
+		
+		## FALLEN EMPIRE PLANETS 
+		if = {
+			limit = { has_owner = yes gpm_is_planet_fallen_empire = yes }
+			planet_event = { id = gpm_engine.100 days = 2 }
+		}
+		
+		## HABITATS 
+		if = {
+			limit = { gpm_is_planet_class_habitat = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			set_planet_flag = gpm_is_galaxy_generated_habitat
+			planet_event = { id = gpm_engine.110 }			
+		}
+		
+		## RINGWORLDS 
+		if = {
+			limit = { gpm_is_planet_class_ringworld = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.120 }			
+			set_planet_flag = gpm_is_galaxy_generated_ringworld
+		}
+		
+		## PRIMITIVE PLANETS 
+		if = {
+			limit = {
+				gpm_is_planet_primitive = yes
+			}
+			planet_event = { id = gpm_engine.130 days = 3 }
+		}
+		
+		# Spawn a terraforming candidate if specific modifiers are present
+		if = {
+			limit = {
+				gpm_is_planet_class_normal_uninhabitable = yes
+				gpm_has_required_terraform_modifier = no
+				OR = {
+					# has_modifier = gpm_unnatural_world
+					has_modifier = gpm_ultra_rich_2
+					has_modifier = gpm_spaceship_graveyard
+					# has_modifier = gpm_old_world
+					has_modifier = gpm_artificial_core
+				}
+			}
+			add_modifier = { modifier = terraforming_candidate days = -1 }
+		}
+		if = {
+			limit = {
+				gpm_has_precursor_modifiers = yes
+				gpm_is_planet_class_normal_uninhabitable = yes
+				gpm_has_required_terraform_modifier = no
+			}
+			add_modifier = { modifier = terraforming_candidate }
+		}
+}
+	}
+}

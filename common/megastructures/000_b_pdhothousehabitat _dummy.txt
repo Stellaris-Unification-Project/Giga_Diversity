@@ -1,0 +1,5 @@
+# see README.txt for example
+
+pd_hothouse_hab_0 = {
+	entity = ""
+}

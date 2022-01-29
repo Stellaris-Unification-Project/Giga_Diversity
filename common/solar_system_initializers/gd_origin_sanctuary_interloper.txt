@@ -1,0 +1,57 @@
+### Sanctuary Interloper
+gd_ring_rogue_origin = {
+	name = "Fallen Sanctuary"
+	class = "sc_black_hole"
+	usage = origin
+    	flags = { empire_home_system gd_origin_sanctuary_interloper }
+	### dummy star / hidden by the megastructure hub
+	planet = {
+		class = pc_black_hole
+		orbit_angle = 0
+		orbit_distance = 0
+		size = 20
+
+		init_effect = {
+			set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+			set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
+		}
+
+		change_orbit = 200
+
+    		planet = {
+			class = "pc_rogue"
+			orbit_distance = 0
+			orbit_angle = 85
+			size = 20
+			home_planet = yes
+			init_effect = {
+				IF = {
+					limit = { is_planet_class = pc_rogue }
+					set_planet_flag = pd_rogue_planet
+					add_modifier = {
+						modifier = pdrogue
+						days = -1
+					}
+					add_deposit = d_rogue_geo
+				}
+			}
+		}
+	}
+	### neighbouring systems : guarantee an A-class star
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = 3 }
+		initializer = "giga_sc_a"
+	}
+	init_effect = {
+		set_star_flag = sol_sector ### to stop New Frontiers from overriding 'planet' classes
+		set_star_flag = ring_world_built ### we have a ringworld in the system
+		set_star_flag = ring_world_built_one
+		set_star_flag = ring_world_built_two
+       		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+}

@@ -1,0 +1,295 @@
+#Overwriting the effect from giga_scripted_effects.txt
+#The purpose is to allow reroll for additional lifeless worlds that have been added by Giga Diversity
+#use this scripted effect only after the world is changed to Lifeless. Otherwise it is worthless
+
+giga_reroll_lifeless = {
+	clear_deposits = yes
+	if = { limit = { is_planet_class = pc_ll_methane } add_deposit = d_frozen_gas_mountain }
+	if = { limit = { is_planet_class = pc_ll_ash } add_deposit = d_lava_lakes }
+	if = { limit = { is_planet_class = pc_ll_sulfur } add_deposit = d_sulfur_pool }
+	if = { limit = { is_planet_class = pc_ll_ammonia } add_deposit = d_ammonia_sea }
+	if = { limit = { is_planet_class = pc_ll_ocean } add_deposit = d_aquatic_trench }
+	if = { limit = { is_planet_class = pc_ll_tidallylocked_cold } add_deposit = d_eyeball_site }
+	if = { limit = { is_planet_class = pc_ll_tidallylocked } add_deposit = d_nightside_mining_operations }
+	if = { limit = { is_planet_class = pc_ll_rogue } add_deposit = d_rogue_geo }
+	while = {
+		count = 14
+		random_list = {
+			50 = {}
+			20 = { add_deposit = d_geothermal_vent		# Energy
+				#GD change the removes the lifeless worlds below from possibly having this deposit
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			20 = {
+				add_deposit = d_underwater_vent			# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			20 = {
+				add_deposit = d_tempestous_mountain		# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+			}
+			#Added check with GD
+			20 = {
+				add_deposit = d_arid_highlands		# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#Added check with GD
+			20 = {
+				add_deposit = d_searing_desert		# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#Added check with GD
+			20 = {
+				add_deposit = d_hot_springs		# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#Added check with GD
+			20 = {
+				add_deposit = d_strong_currents		# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#Added check with GD
+			20 = {
+				add_deposit = d_underwater_jets		# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#Added check with GD
+			20 = {
+				add_deposit = d_rushing_waterfalls	# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#Added check with GD
+			20 = {
+				add_deposit = d_powerful_geyser		# Energy
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+			}
+			10 = {
+				add_deposit = d_veiny_cliffs		# Minerals
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			10 = {
+				add_deposit = d_mineral_fields		# Minerals
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+			}
+			10 = {
+				add_deposit = d_prosperous_mesa		# Minerals
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			10 = {
+				add_deposit = d_ore_rich_caverns		# Minerals
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+			}
+			10 = {
+				add_deposit = d_rich_mountain			# Minerals
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+			}
+			10 = {
+				add_deposit = d_submerged_ore_veins		# Minerals
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#Added check with GD
+			10 = {
+				add_deposit = d_submerged_caves
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			5 = {
+				add_deposit = d_forgiving_tundra		# Food
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+			}
+			5 = {
+				add_deposit = d_black_soil				# Food
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+			}
+			5 = {
+				add_deposit = d_rugged_woods			# Food
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+			}
+			#Added check with GD
+			5 = {
+				add_deposit = d_frozen_gas_lake
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+
+			##########################
+			### Rare #################
+			##########################
+			5 = {
+				add_deposit = d_dust_caverns
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+			}
+			5 = {
+				add_deposit = d_dust_desert
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+			}
+			5 = {
+				add_deposit = d_bubbling_swamp
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+			}
+			5 = {
+				add_deposit = d_fuming_bog
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+			}
+			5 = {
+				add_deposit = d_crystalline_caverns
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_ammonia }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			5 = {
+				add_deposit = d_crystal_forest
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+			}
+			5 = {
+				add_deposit = d_crystal_reef
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+			}
+			#GD additional deposites
+			5 = {
+				add_deposit = d_cryovolcanos
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_ash }
+			}
+			#GD additional deposits
+			5 = {
+				add_deposit = d_volcanic_soil_deposit
+				modifier = { factor = 0 is_planet_class = pc_ll_temperate }
+				modifier = { factor = 0 is_planet_class = pc_ll_foggy }
+				modifier = { factor = 0 is_planet_class = pc_ll_torrid }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked }
+				modifier = { factor = 0 is_planet_class = pc_ll_tidallylocked_cold }
+				modifier = { factor = 0 is_planet_class = pc_ll_ocean }
+				modifier = { factor = 0 is_planet_class = pc_ll_rogue }
+				modifier = { factor = 0 is_planet_class = pc_ll_sulfur }
+				modifier = { factor = 0 is_planet_class = pc_ll_methane }
+			}
+		}
+	}
+}

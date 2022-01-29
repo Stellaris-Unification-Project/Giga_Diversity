@@ -1,0 +1,200 @@
+ssb_njotai_system_initializer = {
+	name = "Njotai"
+	class = "sc_g"
+	usage = custom_empire
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Njotai"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 26
+		has_ring = no
+	}
+
+	planet = {
+		name = "Xunakst"
+		class = "pc_iron"
+		orbit_distance = 75
+		orbit_angle = 98
+		size = 13
+		has_ring = no
+	}
+	planet = {
+		name = "Strovin"
+		class = "pc_carbon"
+		orbit_distance = 35
+		orbit_angle = 10
+		size = 11
+		has_ring = no
+	}
+	planet = {
+		name = "Medarfen"
+		class = "pc_barren"
+		orbit_distance = 35
+		orbit_angle = 160
+		size = 11
+		has_ring = no
+	}
+	planet = {
+		name = "Li Yeivon"
+		class = "pc_continental"
+		orbit_distance = 35
+		orbit_angle = 1
+		size = 21
+		home_planet = yes
+		has_ring = no
+		moon = {
+			name = "Von"
+			class = "pc_barren_cold"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 6
+		}
+	}
+	planet = {
+		name = "Yosogeth"
+		class = "pc_eyeball"
+		orbit_distance = 35
+		orbit_angle = 24
+		size = 18
+		has_ring = no
+	}
+	planet = {
+		name = "Jalon"
+		class = "pc_barren_cold"
+		orbit_distance = 35
+		orbit_angle =125
+		size = 12
+		has_ring = no
+	}
+	planet = {
+		name = "Kwardan"
+		class = "pc_frozen"
+		orbit_distance = 0
+		orbit_angle = 185
+		size = 8
+		has_ring = yes
+		change_orbit = 5
+	}
+	planet = {
+		name = "Dorhankt"
+		class = "pc_gas_giant"
+		orbit_distance = 35
+		orbit_angle = 56
+		size = 39
+		change_orbit = 8
+		has_ring = yes
+		change_orbit = 5
+		moon = {
+			name = "Milsu"
+			class = "pc_subglacial"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 14
+		}
+		moon = {
+			name = "Jotrapan"
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 10
+		}
+		moon = {
+			name = "Birhapan"
+			class = "pc_hydrocarbon"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 10
+		}
+		moon = {
+			name = "Afek Hok"
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 8
+		}
+		moon = {
+			name = "Dotrapan"
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 7
+		}
+		moon = {
+			name = "Sulu"
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 6
+		}
+	}
+	planet = {
+		name = "Renao"
+		class = "pc_gas_giant"
+		orbit_distance = 35
+		orbit_angle = 1
+		size = 17
+		change_orbit = 8
+		has_ring = yes
+		change_orbit = 5
+		moon = {
+			name = "Akh"
+			class = "pc_frozen"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 4
+		}
+		moon = {
+			name = "Waif"
+			class = "pc_volcanic"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 4
+		}
+		moon = {
+			name = "Mwad"
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 4
+		}
+	}
+	planet = {
+		name = "Kentainj"
+		class = "pc_gas_giant"
+		orbit_distance = 35
+		orbit_angle = 312
+		size = 20
+		change_orbit = 5
+		has_ring = no
+	}
+	planet = {
+		name = "Ngositse"
+		class = "pc_cloudless_gas_giant"
+		orbit_distance = 35
+		orbit_angle = 172
+		size = 17
+		change_orbit = 5
+		has_ring = no
+	}
+	planet = {
+		name = "Dzontai"
+		class = "pc_cold_gas_giant"
+		orbit_distance = 35
+		orbit_angle = 67
+		size = 27
+		change_orbit = 5
+		has_ring = no
+	}
+
+}

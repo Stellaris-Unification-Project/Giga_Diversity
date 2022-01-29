@@ -1,0 +1,7 @@
+#Hive queen, and Complex Origin planet classes. There have not been any integration steps to make tweaks to synergizes with Planetary D, Giga, or GPMs
+
+#pc_matryoshka
+#pc_hollow
+
+#Complex Origin Planet Classes
+#pc_patronmoon

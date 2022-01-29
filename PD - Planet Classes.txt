@@ -1,0 +1,307 @@
+#Special Arcologies
+
+#Not Machine or Hive Mind
+#Necropolis Arcology
+#pc_necropolis
+#Eco Arcology
+#pc_ecocity
+#Capital Arcology
+#pc_capitalarc
+#Palace Arcology
+#pc_palacearc
+#Fortress Arcology
+#pc_milarc
+#Relic Fortress Arcology
+#pc_milarc_relic
+#MegaCorp Arc
+#pc_corpoarc
+
+#Hive worlds
+#pc_pdhive1
+#pc_pdhive2
+#Necro Hive
+#pc_necrohive
+#Hive Bioforge World
+#pc_bioforge
+#Hive Biofortress World
+#pc_biofort #this was listed in my notes as pc_pdbiofort
+#Hive Cabpital World
+#pc_biocapital
+
+#Machine Factory World
+#pc_machine_factory
+#Machine Fortress World
+#pc_machine_fort
+#Machine Capital World
+#pc_machine_capital
+#Necro AI world
+#pc_machine_necropolis
+
+#########################
+#Exotic Classes
+#Exotic Climate
+#########################
+#Methane World
+#pc_methane
+#Methane Arcology world
+#pc_methanecity
+#Methane Ringworld
+#pc_methanering
+
+#Ammonia World
+#pc_ammonia
+#Ammonia Arcology world
+#pc_ammoniacity
+#Ammonia Ringworld
+#pc_ammoniaring
+
+#Ash World. It has sulfur atomosphere
+#pc_ash
+#Ash Acology world
+#pc_ashcity
+#Ash Ringworld
+#pc_ashring
+
+#Irradiated world. The life on the world has adapted to survive by converting the radiation into energy
+#pc_irradiated
+
+#Acid World
+#pc_acid
+
+#Sulfur World
+#pc_sulfur
+#Sulfur City World
+#pc_sulfurcity
+#Sulfur Ringwold
+#pc_sulfurring
+
+#############################
+#PD Base Class Planets
+#############################
+
+#Dry
+#pc_prairie
+#pc_steppe
+#pc_veld
+#pc_hadesert
+#pc_sandsea
+#pc_mesa
+#pc_outback
+#pc_oasis
+#pc_med
+#pc_semiarid
+#pc_badlands
+#pc_coastal
+##RARE
+#pc_salt
+#pc_primal
+#pc_coral
+#pc_supercon
+#pc_aquifer
+
+#Cold
+#pc_antarctic
+#pc_snow
+#pc_glacial
+#pc_frozen_desert
+#pc_boreal
+#pc_highland
+#pc_mud
+#pc_swamp
+#pc_mushroom
+#pc_aeolian
+#pc_duneforest
+#pc_snowball
+#pc_basalt
+##RARE
+#pc_storm
+#pc_rogue
+#pc_eyeball
+#pc_glacio
+#pc_lanthanide
+#pc_lichen
+
+#Wet
+#pc_subarctic
+#pc_cascadian
+#pc_mangrove
+#pc_wetswamp
+#pc_desertislands
+#pc_hajungle
+#pc_retinal
+#pc_forest
+#pc_lake
+#pc_tepid
+#pc_cenote
+#pc_aquaticcenote_uw #Underwater verison of cenote
+#pc_fog
+##RARE
+#pc_aquatic
+#pc_aquatichot
+#pc_aquaticcold
+#pc_megaflora
+#pc_karst
+#pc_aquatickarst_uw #Underwater verison of karst
+#pc_superhabitable
+#pc_tidallylocked
+#pc_geothermal
+#pc_biolumen
+#pc_aquaticbio_uw #Underwater verison of biolumen
+#pc_reef
+#Mega Flora Tree of Life Origin only
+#pc_megafloratol
+#Megaflora Hive variants from Megaflora Tree of Life origin.
+#pc_megaflorahive
+#pc_megafloraforge #old name was pc_pdfloraforge
+#pc_megaflorafort
+#pc_megafloracapital
+
+
+#Shroud
+#pc_pdshroud
+#Underwater Shroud
+#pc_aquaticshroud_uw
+#Shourd Arcology
+#pc_shroudcity
+#Shroud Eco Arcology
+#pc_shroudecocity
+#Shroud Mil Arc
+#pc_shroudmilarc
+#Shroud MegaCorp Arc
+#pc_shroudcorpoarc
+#Shroud Capital Arc
+#pc_shroudcapitalarc
+#Shroud Palace Arc
+#pc_shroudpalacearc
+
+##Unique
+#Wet
+#pc_crystal
+#pc_floating
+#pc_technoorganic
+
+#Dry
+#pc_graveyard
+
+#Archive
+#pc_archive
+
+#Crucible Worlds
+#pc_crucible
+#pc_shroud_crucible
+#pc_clean_crucible
+
+#Gaia like worlds
+#undefined Climate type
+#pc_tidallygaia
+
+#Aquatic Classes
+#Wet Climate
+
+#Standard aquatic doesn't have hot or cold
+#Temperate
+#pc_aquatic
+#Aquatic Underwater Version
+#pc_aquatic_uw
+#Hot Aquatic
+#pc_aquatichot
+#Aquatic Underwater Version
+#pc_aquatichot_uw
+#Cold Aquatic
+#pc_aquaticcold
+#Aquatic Underwater Version
+#pc_aquaticcold_uw
+#Aqua Arc - not for Machine or Hive
+#Underwater Arcology
+#pc_aquaticcity
+#Tidally Locked Aquatic
+#pc_tidallyaquatic
+#Aquatic Surface
+#pc_aquatic_surface
+#Aquatic Biolumen Underwater
+#pc_aquaticbio_uw
+#Aquatic Shroud Underwater
+#pc_aquaticshroud_uw
+#Aquatic Karst Underwater
+#pc_aquatickarst_uw
+#Aquatic Cenote Underwater
+#pc_aquaticcenote_uw
+
+###########################
+#Unihabitable Planets
+###########################
+
+#Can be terraformed if it is a terraforming canadate.
+#pc_hothouse
+
+#Diamond World. Probably from red giant whose core was hot enough to fuse Helium into carbon. The outer layers were stripped at some point by a companion. The core has since cooled and solidified to diamond.
+#pc_diamond
+
+#Planet with a large Iron Core
+#pc_iron
+
+#The core of a gas giant that has been stripped of its atmosphere
+#pc_chthonian
+
+#Hot gas giant
+#pc_hot_gas_giant
+
+#Cold gas giant
+#pc_cold_gas_giant
+
+#Cloudless gas giant. Like Neptune or Uranus
+#pc_cloudless_gas_giant
+
+#Liquid Ethane World
+#pc_ethane_ocean
+
+#Volcanic Planet
+#pc_volcanic
+
+#Subglacial World
+#pc_subglacial
+
+#Hydrocarbon World
+#pc_hydrocarbon
+
+#Carbon World
+#pc_carbon
+
+#Rare Uninhabitable Worlds
+
+#Barren Tidallylocked World
+#pc_tidallylocked_barren
+
+#Barren Rogue world
+#pc_rogue_barren
+
+##########################
+#Habitats
+##########################
+
+#Gas Giant Habitat. Storms are still present. Also the districts are restricted.
+#pc_pd_gas_giant_hab
+
+#Barren Habitat. Districts are restricted and the there are significant blockers in place
+#pc_pd_barren_hab
+#pc_pd_barren_cold_hab
+
+#Molten Habitat. Districts are restricted and the there are significant blockers in place
+#pc_pd_molten_hab
+
+#Frozen Habitat. Districts are restricted and the there are significant blockers in place
+#pc_pd_frozen_hab
+
+#Hothouse Habitat. Districts are restricted and the there are significant blockers in place
+#pc_pd_hothouse_hab
+
+#Asteroid Habitat. Districts are restricted and the there are significant blockers in place
+#pc_pd_asteroid_hab
+
+#Toxic World Habitat. Districts are restricted and the there are significant blockers in place
+#pc_pd_toxic_hab
+
+#Aquatic World Habitat. 
+#pc_aquatichab
+#pc_aquatichothab
+#pc_aquaticcoldhab

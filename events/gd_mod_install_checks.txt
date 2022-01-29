@@ -1,0 +1,140 @@
+namespace = gdmodinstallcheck
+#Set Global flags for exotic, unique, and shroud submods for planetary diversity
+#planetarydiversityexotics
+#planetarydiversityuniques
+#planetarydiversityshroud
+#planetarydiversityarcs
+
+event = {
+	id = gdmodinstallcheck.00
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+#################### Unique Worlds Flag
+#This check depends on the high probability that at least one Unique World will spawn if the mod is installed
+		if = {
+			limit = {
+				OR = {
+					any_country = { has_origin = origin_floating_world }
+					any_country = { has_origin = origin_crystal_world }
+					any_country = { has_origin = origin_graveyard_world }
+					any_country = { has_origin = origin_techno_world }
+					any_country = { has_origin = origin_archive_world }
+					any_country = { has_origin = origin_crucible_world }
+				}
+			}
+			set_global_flag = planetarydiversityuniques
+		}
+		else_if = {
+			every_galaxy_planet = {
+				limit = {
+					OR = {
+						OR = {
+							solar_system = { has_star_flag = floating_system }
+							is_planet_class = pc_floating
+						}
+						OR = {
+							solar_system = { has_star_flag = pdcrystal_system }
+							is_planet_class = pc_crystal
+						}
+						OR = {
+							solar_system = { has_star_flag = graveyard_system }
+							is_planet_class = pc_graveyard
+						}
+						OR = {
+							solar_system = { has_star_flag = technoorganic_system }
+							is_planet_class = pc_technoorganic
+						}
+						OR = {
+							solar_system = { has_star_flag = archive_system }
+							is_planet_class = pc_archive
+						}
+						OR = {
+							solar_system = { has_star_flag = crucible_system }
+							is_planet_class = pc_crucible
+							is_planet_class = pc_shroud_crucible
+							is_planet_class = pc_clean_crucible
+						}
+					}
+				}
+				set_global_flag = planetarydiversityuniques
+			}
+		}
+#################### Exotic Worlds Flag
+#This check depends on the high probability that at least one planet will randomly be Exotic if the mod is installed
+		if = {
+			every_galaxy_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_methane
+						is_planet_class = pc_ammonia
+						is_planet_class = pc_ash
+						is_planet_class = pc_irradiated
+						is_planet_class = pc_acid
+						is_planet_class = pc_sulfur
+					}
+				}
+				set_global_flag = planetarydiversityexotics
+			}
+		}
+#################### Shroud Worlds Flag
+#This check depends on the fact that when the Shroud World Mod is installed there is a 100 precent chance that there will be one system with pc_pdshroud
+		if = {
+			limit = {
+				OR = {
+					any_country = { has_origin = origin_pd_shroud }
+				}
+			}
+			set_global_flag = planetarydiversityshroud
+		}
+		else_if = {
+			every_galaxy_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_pdshroud
+						is_planet_class = pc_shroudcity
+						is_planet_class = pc_shroudecocity
+						is_planet_class = pc_shroudmilarc
+						is_planet_class = pc_shroudcorpoarc
+						is_planet_class = pc_shroudcapitalarc
+						is_planet_class = pc_shroudpalacearc
+						is_planet_class = pc_shroud_crucible
+					}
+				}
+				set_global_flag = planetarydiversityshroud
+			}
+		}
+#################### More Arcologies Flag 
+#This check depends on the fact that when the More Arcologies Mod is installed there is a 100 precent chance that there will be one system with pc_ecocity
+		if = {
+			every_galaxy_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_ecocity
+						is_planet_class = pc_milarc
+						is_planet_class = pc_milarc_relic
+						is_planet_class = pc_capitalarc
+						is_planet_class = pc_palacearc
+						is_planet_class = pc_necropolis
+						is_planet_class = pc_corpoarc
+						is_planet_class = pc_necrohive
+						is_planet_class = pc_bioforge
+						is_planet_class = pc_biofort
+						is_planet_class = pc_biocapital
+						is_planet_class = pc_machine_necropolis
+						is_planet_class = pc_machine_factory
+						is_planet_class = pc_machine_fort
+						is_planet_class = pc_machine_capital
+						is_planet_class = pc_shroudecocity
+						is_planet_class = pc_shroudmilarc
+						is_planet_class = pc_shroudcorpoarc
+						is_planet_class = pc_shroudcapitalarc
+						is_planet_class = pc_shroudpalacearc
+					}
+				}
+				set_global_flag = planetarydiversityarcs
+			}
+		}
+	}
+}

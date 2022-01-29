@@ -1,0 +1,136 @@
+#Adding the Lifeless Rogue Terraform modifier to a Habitat
+
+#This is for Toxic and Hothouse Hab.
+decision_ll_rogue_terraform_aa = {
+	owned_planets_only = yes
+	#icon = decision_ecoarcology_project
+	prerequisites = { giga_tech_terraform_toxic }
+	enactment_time = 3780
+	resources = {
+		category = decisions
+		cost = {
+			influence = 75
+			alloys = 7260
+			energy = 3360
+		}
+	}
+	potential = {
+	#TODO add additional tech requirements
+		owner = { has_ascension_perk = ap_world_shaper }
+		NOT = { has_global_flag = terraform_toxic_disabled }
+		NOT = { has_global_flag = planetaryterraformimpossible }
+		NOT = { has_modifier = lifeless_rogue_terrafrom }
+		OR = {
+			is_planet_class = pc_pd_toxic_hab
+			is_planet_class = pc_pd_hothouse_hab
+		}
+	}
+	effect = {
+		# Add Terraform Modifier that allows terraform into a lifeless world
+		hidden_effect = {
+			#remove_planet_flag = pdhab #TODO add this flag removal to terraforming
+			#remove_planet_flag = pdhab_hydrocarbon #TODO add this flag removal to terraforming
+			#remove_planet_flag = pd_mining_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d1 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d2 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_energy_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_science_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_commercial_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_farming_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_foundry_hab #TODO add this flag removal to terraforming
+			add_modifier = { modifier = lifeless_rogue_terrafrom }
+			#giga_reroll_lifeless = yes #TODO add this flag removal to terraforming checks
+		}
+	}
+	ai_weight = { weight = 5 }
+}
+
+# Barren, Barren Cold, and Frozen with all of the variants.
+decision_ll_rogue_terraform_dci = {
+	owned_planets_only = yes
+	#icon = decision_ecoarcology_project
+	prerequisites = { giga_tech_terraform_barren }
+	enactment_time = 3780
+	resources = {
+		category = decisions
+		cost = {
+			influence = 75
+			alloys = 7260
+			energy = 3360
+		}
+	}
+	potential = {
+		owner = { has_ascension_perk = ap_world_shaper }
+	#TODO add additional tech requirements
+		NOT = { has_global_flag = planetaryterraformimpossible }
+		NOT = { has_global_flag = terraform_barren_disabled }
+		NOT = { has_modifier = lifeless_rogue_terrafrom }
+		OR = {
+			is_planet_class = pc_pd_barren_hab
+			is_planet_class = pc_pd_barren_cold_hab
+			is_planet_class = pc_pd_frozen_hab
+		}
+	}
+	effect = {
+		# Add Terraform Modifier that allows terraform into a lifeless world
+		hidden_effect = {
+			#remove_planet_flag = pdhab #TODO add this flag removal to terraforming
+			#remove_planet_flag = pdhab_hydrocarbon #TODO add this flag removal to terraforming
+			#remove_planet_flag = pd_mining_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d1 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d2 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_energy_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_science_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_commercial_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_farming_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_foundry_hab #TODO add this flag removal to terraforming
+			add_modifier = { modifier = lifeless_rogue_terrafrom }
+			#giga_reroll_lifeless = yes #TODO add this flag removal to terraforming checks
+		}
+	}
+	ai_weight = { weight = 5 }
+}
+
+# Molten habs of all types.
+decision_ll_rogue_terraform_gs = {
+	owned_planets_only = yes
+	#icon = decision_ecoarcology_project
+	prerequisites = { giga_tech_terraform_molten }
+	enactment_time = 3780
+	resources = {
+		category = decisions
+		cost = {
+			influence = 75
+			alloys = 7260
+			energy = 3360
+		}
+	}
+	potential = {
+		owner = { has_ascension_perk = ap_world_shaper }
+	#TODO add additional tech requirements
+		NOT = { has_global_flag = planetaryterraformimpossible }
+		NOT = { has_global_flag = geothermal_disabled }
+		NOT = { has_modifier = lifeless_rogue_terrafrom }
+		OR = {
+			is_planet_class = pc_pd_molten_hab
+		}
+	}
+	effect = {
+		# Add Terraform Modifier that allows terraform into a lifeless world
+		hidden_effect = {
+			#remove_planet_flag = pdhab #TODO add this flag removal to terraforming
+			#remove_planet_flag = pdhab_hydrocarbon #TODO add this flag removal to terraforming
+			#remove_planet_flag = pd_mining_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d1 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d2 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_energy_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_science_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_commercial_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_farming_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_foundry_hab #TODO add this flag removal to terraforming
+			add_modifier = { modifier = lifeless_rogue_terrafrom }
+			#giga_reroll_lifeless = yes #TODO add this flag removal to terraforming checks
+		}
+	}
+	ai_weight = { weight = 5 }
+}

@@ -1,0 +1,5 @@
+# see README.txt for example
+
+terraform_barren_to_sulfur_0 = {
+	entity = ""
+}

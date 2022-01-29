@@ -1,0 +1,105 @@
+trait_pc_ll_methane_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_methane_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_methane_habitability = 1.0
+		pc_methane_habitability = 1.0
+	}
+}
+
+trait_pc_ll_ammonia_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ammonia_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_ammonia_habitability = 1.0
+		pc_ammonia_habitability = 1.0
+	}
+}
+
+trait_pc_ll_sulfur_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_sulfur_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_sulfur_habitability = 1.0
+		pc_sulfur_habitability = 1.0
+	}
+}
+
+trait_pc_ll_ash_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ash_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_ash_habitability = 1.0
+		pc_ash_habitability = 1.0
+	}
+}
+
+trait_pc_ll_ocean_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_aquatic_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_ocean_habitability = 1.0
+	}
+}
+
+trait_pc_ll_tidallylocked_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_tidallylocked_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_tidallylocked_habitability = 1.0
+	}
+}
+trait_pc_ll_tidallylocked_cold_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_eyeball_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_tidallylocked_cold_habitability = 1.0
+	}
+}
+trait_pc_ll_rogue_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_rogue_preference.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	ai_weight = { weight = 0 }
+	initial = no
+	randomized = no
+	modification = no
+	modifier = {
+		pc_ll_rogue_habitability = 1.0
+	}
+}

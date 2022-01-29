@@ -1,0 +1,103 @@
+namespace = gd_gpm_modifiers
+
+#planet flag for whether the gpm modifiers have been set
+#gdgpmmodifiers
+
+planet_event = {
+	id = gd_gpm_modifiers.00
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_planet_flag = forbid_guillis_planet_modifiers }
+		NOT = { solar_system = { has_star_flag = gpm_precursor_machine_system } }
+	}
+
+	immediate = {
+if = {
+	limit = { not = { has_planet_flag = gdgpmmodifiers } }
+		set_planet_flag = gdgpmmodifiers
+		# set default base modifiier multipliers
+		set_variable = { which = gpm_planet_size_multiplier value = 1 }
+		set_variable = { which = gpm_planet_size_multiplier_wonders value = 1 }
+		set_variable = { which = gpm_planet_size_multiplier_precursor value = 1 }
+		## STARS 
+		if = {
+			limit = { gpm_is_planet_class_star = yes }
+			planet_event = { id = gpm_engine.10 }
+		}
+		
+		## ASTEROIDS 
+		if = {
+			limit = { gpm_is_planet_class_asteroid = yes }
+			planet_event = { id = gpm_engine.20 }
+		}
+		
+		## GAS GIANTS 
+		if = {
+			limit = { gpm_is_planet_class_gas_giant = yes }
+			planet_event = { id = gpm_engine.30 }
+		}
+		
+		## NORMAL UNINHABITABLE PLANETS (Barren, Frozen, Toxic, Molten)
+		if = {
+			limit = { gpm_is_planet_class_normal_uninhabitable = yes }
+			planet_event = { id = gpm_engine.40 }
+		}
+		
+		## NUKED PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_nuked = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.50 }
+		}
+		
+		## NORMAL HABITABLE PLANETS (Colonizable standard planets)
+		if = {
+			limit = { gpm_is_planet_class_normal_habitable = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.60 }
+		}
+		
+		## CITY PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_city = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.70 }
+		}
+		
+		## MACHINE PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_machine = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.80 }
+		}
+		
+		## HIVE PLANETS 
+		if = {
+			limit = { gpm_is_planet_class_hive = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			planet_event = { id = gpm_engine.90 }
+		}
+		
+		# Spawn a terraforming candidate if specific modifiers are present
+		if = {
+			limit = {
+				gpm_is_planet_class_normal_uninhabitable = yes
+				gpm_has_required_terraform_modifier = no
+				OR = {
+					# has_modifier = gpm_unnatural_world
+					has_modifier = gpm_ultra_rich_2
+					has_modifier = gpm_spaceship_graveyard
+					# has_modifier = gpm_old_world
+					has_modifier = gpm_artificial_core
+				}
+			}
+			add_modifier = { modifier = terraforming_candidate days = -1 }
+		}
+		if = {
+			limit = {
+				gpm_has_precursor_modifiers = yes
+				gpm_is_planet_class_normal_uninhabitable = yes
+				gpm_has_required_terraform_modifier = no
+			}
+			add_modifier = { modifier = terraforming_candidate }
+		}
+}
+	}
+}

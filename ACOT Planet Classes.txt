@@ -1,0 +1,20 @@
+#ACOT
+#pc_dark_fractured
+#pc_dark_fractured_ae
+#pc_dark_fractured_unstable
+#pc_dark_fractured_ae_unstable
+
+#pc_acot_enigmopolis
+#pc_acot_pmc_vault
+#pc_acot_pmc_data_planet
+#pc_acot_pmc_storage_planet
+
+#ACOT: Secrets Beyond The Gates
+#pc_invisible_star
+#pc_golden_world
+#pc_golden_world_habitable
+#pc_golden_fortress
+#pc_omega_ringworld_habitable
+#pc_omega_ringworld_seam
+#pc_omega_ringworld_tech
+#pc_goodman_gaia_world

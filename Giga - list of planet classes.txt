@@ -1,0 +1,198 @@
+###################################
+#Giga Planet classes and structures
+###################################
+
+
+##############################################
+###Galactic Core SMBH##########################
+##############################################
+#Galactic Core SMBH
+#pc_core_black_hole
+#pc_core_quasar
+
+##############################################
+###Unique Giga Stars##########################
+##############################################
+
+#System destroyed/Interstelar Habitat creation
+#pc_giga_empty_space
+
+#Brown Dwarf
+#pc_t_star_big
+
+# Penrose Sphere Blackhole
+#pc_black_hole_giga
+
+#Pouchkinn Blackhole
+#pc_pouchkinn_black_hole
+
+#Ignited Star
+#pc_gigaignited_star
+
+#Custom black hole
+#pc_ehof_black_hole
+
+# Preservation Sphere
+#pc_whc_star
+
+#Brown Dwarf that can be compressed into ignited star
+#pc_gigabrown_dwarf
+
+# White hole
+#pc_wh_star
+
+# White hole
+#pc_whdyson_star
+
+# O Type Star
+#pc_giga_o_star
+
+##############################################
+###Unique Giga Habitable Structures###########
+##############################################
+
+#Aldersons Disk Slices Acrologies and Regular. There is no hive version.
+#pc_alderson_slice_gaia
+#pc_alderson_slice_ecu
+#pc_alderson_slice_pc
+#pc_alderson_slice_hive
+#pc_alderson_slice_machine
+#pc_alderson_slice_gaia_shattered
+
+#Ringworld Arcologies
+#pc_ringworld_city
+#pc_ringworld_machine
+#pc_ringworld_hive
+
+#Square version of Ringworld
+#pc_squareworld_habitable
+
+#Galactic Core Habitable Gigastructure 
+#pc_birch
+
+Habitable Gigastructure like birch
+#pc_void_birch
+
+
+#Planetary Ring
+#pc_equatorial_shipyard
+
+#Penrose Ring Sections
+#pc_giga_penrose_habitable
+
+#Small orbital ring habitat (like Halo's Ring)
+#pc_gigaorbital_ring
+
+#Interstellar Habitat
+#pc_interstellar_habitat
+
+#Interstellar ringworld
+#pc_interstellar_ringworld_habitable
+
+#Flat world. Not buildable. It spawns at the start of a game.
+#pc_flat_world
+
+#Planet/Moon Computer
+#pc_giga_planetary_computer
+
+#Gas Giant with no storms and controlled breathable upper atmosphere
+#pc_habitable_gas_giant
+
+#M Brain. Virtual reality.
+#pc_virtual_reality
+#pc_virtual_industry
+#pc_virtual_stellar_industry
+
+# Asteroid habitat TODO merg or synergize with the planetary diversity Asteroid Habitat
+#pc_ehof_habitat
+
+#Maginot Worlds
+#regular world (non-artificial) plus Maginot
+#pc_giga_maginot_world
+#Habitable Gas Giant plus Maginot World
+#pc_giga_maginot_gas_giant
+
+
+
+##############################################
+###Giga Unique Uninhabitable Structures ######
+##############################################
+
+#Gigastructure Converts Moon to reflective orbital
+#pc_disco_moon
+
+# Behemoth Planetcraft
+#this was removed keeping on the list as a record of the past set-up
+#pc_planetship
+
+#Damaged small orbital ring habitat (like Halo's Ring). It has to be repaired to be colonized.
+#pc_gigaorbital_ring_ruined
+
+#Asteroid Artillery
+#pc_giga_asteroid_artillery
+
+##############################################
+###Unique Giga Habitable Planets##############
+##############################################
+
+#lifeless worlds
+##############
+#Wet Climate
+##############
+#After Conversion of Barren Cold/Frozen worlds
+# Lifeless Temperate
+#pc_ll_temperate
+
+#After Conversion of Toxic worlds
+# Foggy World
+#pc_ll_foggy
+
+#################
+#Dry Climate
+#################
+#After Conversion of Barren/Molten worlds
+# Torrid World
+#pc_ll_torrid
+
+
+#Almost tomb world
+#################
+#Dry Climate
+#################
+#Radioactive Desert World. Unique and does not have terraform links
+# Katzenland
+#pc_katzenland
+
+##############################################
+###Unique Giga Uninhabitable Planets##########
+##############################################
+
+#Melted Frozen world. Has to be terraformed to a different world
+#pc_melted_frozen
+
+#Brown Dwarf Ignitable
+#pc_gigabrown_dwarf
+
+# Red toxic world
+#pc_red_toxic
+
+# Dark matter orb
+#pc_ehof_planet
+
+# Creators Planet
+#pc_ehof_cplanet
+
+#Shielded Habitat.
+#pc_ehof_unhabitat
+
+#Strip mining in progress for a world
+#pc_strip_mined
+
+#Strip mining completed. Only thing remaining is the core of the world pc_core_mined
+#pc_core_mined
+
+#After Gas Giant has SUCC make it small enough
+#pc_metallic_hydrogen
+
+#Gas Giant turned into Lotus structure
+#pc_food_giant

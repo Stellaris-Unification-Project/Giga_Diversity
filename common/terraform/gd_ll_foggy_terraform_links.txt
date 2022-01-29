@@ -1,0 +1,538 @@
+@terraforming_cost_level_1 = 2000 #<-- same category terraforming
+@terraforming_cost_level_2 = 5000 #<-- different category terraforming
+@terraforming_cost_level_3 = 10000 #<-- Hive and machine
+@terraforming_cost_level_4 = 15000 #<-- climate restoration
+@terraforming_cost_gaia = 7500
+@terraforming_cost_ll = 5000 #<--- Terraforming Lifeless Worlds
+@terraforming_duration_level_1 = 1800 #<-- same category terraforming
+@terraforming_duration_level_2 = 3600 #<-- different category terraforming
+@terraforming_duration_level_3 = 5400 #<-- opposite category terraforming and uninhabitable to inhabitable terraforming
+@terraforming_duration_level_4 = 7200 #<-- special terraforming, e.g. to gaia, machine world etc.
+@terraforming_duration_gaia = 3600
+@terraforming_duration_ll = 3600 #<--- Terraforming Lifeless Worlds
+#Foggy Lifeless World
+#Planetary Diversity original mod and exotic
+
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_cascadian
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_cascadian } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_desertislands
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_desertislands } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_subarctic
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }	
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_subarctic } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_mangrove
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_mangrove } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_fog
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_cascadian } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_wetswamp
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_wetswamp } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_hajungle
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_hajungle } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_cenote
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_cenote } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_retinal
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_retinal } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_forest
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_forest } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_lake
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_lake } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_aquatic
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_gaia }
+	}
+	duration = @terraforming_duration_gaia
+	potential = { has_ascension_perk = ap_hydrocentric  has_ascension_perk = ap_world_shaper }
+	condition = { has_ascension_perk = ap_hydrocentric  has_ascension_perk = ap_world_shaper }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_aquatic } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_steppe
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_steppe } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_sandsea
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_sandsea } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_oasis
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_oasis } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_mesa
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_mesa } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_badlands
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_cascadian } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_basalt
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_basalt } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_outback
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_outback } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_coastal
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_coastal } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_swamp
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_swamp } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_mud
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }	
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_mud } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_frozen_desert
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_frozen_desert } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_glacial
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_glacial } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_hadesert
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_hadesert } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_prairie
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_prairie } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_veld
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_veld } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_med
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_med } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_semiarid
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_terrestrial_sculpting }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_semiarid } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_boreal
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_boreal } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_mushroom
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_mushroom } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_antarctic
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_antarctic } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_snow
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_snow } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_highland
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_highland } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_tepid
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_tepid } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_aeolian
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_aeolian } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_duneforest
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_duneforest } }
+}
+
+
+#Exotic
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_acid
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_acid } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_ammonia
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_ammonia } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_ash
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_ash } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_methane
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_methane } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_irradiated
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_irradiated } }
+}
+terraform_link = {
+	from = pc_ll_foggy
+	to = pc_sulfur
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }	
+	effect = { from = { remove_modifier = lifeless_foggy remove_modifier = lifeless_foggy_gases } }
+	ai_weight = { weight = 5 modifier = { factor = 2 ideal_planet_class = pc_sulfur } }
+}
+#Special

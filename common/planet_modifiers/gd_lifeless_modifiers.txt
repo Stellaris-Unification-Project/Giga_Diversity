@@ -1,0 +1,8 @@
+pm_lifeless_methane =  {				spawn_chance = {} modifier = "lifeless_methane" }
+pm_lifeless_ammonia =  {				spawn_chance = {} modifier = "lifeless_ammonia" }
+pm_lifeless_ash =  {				spawn_chance = {} modifier = "lifeless_ash" }
+pm_lifeless_sulfur =  {				spawn_chance = {} modifier = "lifeless_sulfur" }
+pm_lifeless_ocean =  {				spawn_chance = {} modifier = "lifeless_ocean" }
+pm_lifeless_rogue =  {				spawn_chance = {} modifier = "lifeless_rogue" }
+pm_lifeless_tidallylocked =  {				spawn_chance = {} modifier = "lifeless_tidallylocked" }
+pm_lifeless_tidallylocked_cold =  {				spawn_chance = {} modifier = "lifeless_tidallylocked_cold" }

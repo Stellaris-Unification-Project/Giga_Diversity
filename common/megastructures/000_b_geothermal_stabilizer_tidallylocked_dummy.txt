@@ -1,0 +1,5 @@
+# see README.txt for example
+
+terraform_molten_to_tidallylocked_0 = {
+	entity = ""
+}

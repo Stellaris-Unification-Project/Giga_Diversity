@@ -1,0 +1,116 @@
+#Restricting habitats
+
+planetary_hab_imposs = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_mega_collision.dds"
+	icon_frame = 2
+}
+
+#Planetary Modifier for Iron Planet
+gd_pd_iron_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/gpm_iron_planet.dds"
+	icon_frame = 1
+	important = yes
+}
+
+
+#Terraforming Molten in steps using planetary modifiers
+
+#Stage 0: Identify techtonic Hotspots
+gd_molten_terraforming_identify_techtonic_hotspots = {
+icon_frame = 2
+}
+#Stage 1: Cooling beam facilities
+gd_molten_terraforming_cooling_beam_facilities = {
+icon_frame = 2
+}
+#Stage 2: Solar Capture Array
+gd_molten_terraforming_solar_capture_array = {
+icon_frame = 2
+}
+#Stage 3: Bring Reactor Grid Online
+gd_molten_terraforming_reactor_grid = {
+icon_frame = 2
+}
+
+#Gas Giant Habitat Conversion
+
+#Stage 0: Floating Stabilizer Scaffolding
+gd_convert_habitable_gasgiant_floating_stabilizers = {
+icon_frame = 2
+}
+#Stage 1: Magnetic Power Nodes
+gd_convert_habitable_gasgiant_power_nodes = {
+icon_frame = 2
+}
+#Stage 2: Planetary Floating Power Relays
+gd_convert_habitable_gasgiant_power_relays = {
+icon_frame = 2
+}
+#Stage 3: Gravity Modulators
+gd_convert_habitable_gasgiant_gravity_modulators = {
+icon_frame = 2
+}
+
+#Barren and Frozen Habitat Conversion
+
+#Stage 0: Barren: Core Activation Facilities
+gd_convert_barren_core_activation_facilities = {
+icon_frame = 2
+}
+#Stage 0: Frozen: Adaptive Core Activation Adaptive Facilities
+gd_convert_frozen_adaptive_core_activation_facilities = {
+icon_frame = 2
+}
+#Stage 1: Focused Hypercoil Sites
+gd_convert_barren_focused_hypercoil = {
+icon_frame = 2
+}
+#Stage 2: Barren: Crustal Heat and Gas Venting Fissures
+gd_convert_barren_venting_fissures = {
+icon_frame = 2
+}
+#Stage 2: Frozen: Crustal Heat and Gas Venting Fissures
+gd_convert_frozen_crustal_repurposing_facilities = {
+icon_frame = 2
+}
+#Stage 3: Dynamic Core Power Generators
+gd_convert_barren_dynamic_core_power_generators = {
+icon_frame = 2
+}
+
+#Toxic Habitat Conversion
+#Stage 0
+gd_convert_toxic_phase_1 = {
+icon_frame = 2
+}
+#Stage 1
+gd_convert_toxic_phase_2 = {
+icon_frame = 2
+}
+#Stage 2
+gd_convert_toxic_phase_3 = {
+icon_frame = 2
+}
+#Stage 3
+gd_convert_toxic_phase_4 = {
+icon_frame = 2
+}
+
+#Hothouse Habitat Conversion
+
+#Stage 0
+gd_convert_hothouse_phase_1 = {
+icon_frame = 2
+}
+#Stage 1
+gd_convert_hothouse_phase_2 = {
+icon_frame = 2
+}
+#Stage 2
+gd_convert_hothouse_phase_3 = {
+icon_frame = 2
+}
+#Stage 3
+gd_convert_hothouse_phase_4 = {
+icon_frame = 2
+}

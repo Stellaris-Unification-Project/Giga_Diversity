@@ -1,0 +1,277 @@
+@terraforming_cost_level_1 = 2000 #<-- same category terraforming
+@terraforming_cost_level_2 = 5000 #<-- different category terraforming
+@terraforming_cost_level_3 = 10000 #<-- Hive and machine
+@terraforming_cost_level_4 = 15000 #<-- climate restoration
+@terraforming_cost_gaia = 7500
+@terraforming_cost_ll = 5000 #<--- Terraforming Lifeless Worlds
+@terraforming_duration_level_1 = 1800 #<-- same category terraforming
+@terraforming_duration_level_2 = 3600 #<-- different category terraforming
+@terraforming_duration_level_3 = 5400 #<-- opposite category terraforming and uninhabitable to inhabitable terraforming
+@terraforming_duration_level_4 = 7200 #<-- special terraforming, e.g. to gaia, machine world etc.
+@terraforming_duration_gaia = 3600
+@terraforming_duration_ll = 3600 #<--- Terraforming Lifeless Worlds
+@hiveCost = 10000
+@hiveTime = 7200
+
+#Aquatics
+#LL Ocean
+terraform_link = {
+	from = pc_ll_ocean
+	to = pc_aquatic
+   	resources = { category = terraforming cost = { energy = @terraforming_cost_gaia } }
+	duration = @terraforming_duration_gaia
+	potential = { has_ascension_perk = ap_hydrocentric  has_ascension_perk = ap_world_shaper }
+	condition = { has_ascension_perk = ap_hydrocentric  has_ascension_perk = ap_world_shaper }
+	effect = {
+		from = {
+			remove_modifier = lifeless_ocean
+			reroll_deposits = yes
+			add_modifier = { modifier = aquatic days = -1 }
+		}
+	}
+	ai_weight = { weight = 0 }
+}
+terraform_link = {
+	from = pc_ll_ocean
+	to = pc_ocean
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration }
+	effect = {
+		from = {
+			remove_modifier = lifeless_ocean
+			remove_deposit = d_aquatic_trench
+			reroll_deposits = yes
+		}
+	}
+	ai_weight = { weight = 0 }
+}
+
+#Rare
+
+#LL Tidallylocked
+terraform_link = {
+	from = pc_ll_tidallylocked
+	to = pc_tidallylocked
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration }
+	effect = {
+		from = {
+			remove_modifier = lifeless_tidallylocked
+			reroll_deposits = yes
+		}
+	}
+	ai_weight = { weight = 0 }
+}
+
+#LL Tidallylocked Cold
+terraform_link = {
+	from = pc_ll_tidallylocked_cold
+	to = pc_eyeball
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration }
+	effect = {
+		from = {
+			remove_modifier = lifeless_tidallylocked_cold
+			reroll_deposits = yes
+		}
+	}	
+	ai_weight = { weight = 0 }
+}
+#TL Gaia
+#LL Tidallylocked
+terraform_link = {
+	from = pc_ll_tidallylocked
+	to = pc_tidallygaia
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_gaia }
+	}
+	duration = @terraforming_duration_gaia
+	condition = { has_ascension_perk = ap_world_shaper }
+	potential = { has_ascension_perk = ap_world_shaper }
+	effect = {
+		from = {
+			remove_modifier = lifeless_tidallylocked
+			remove_deposit = d_nightside_mining_operations 
+		}
+	}
+	ai_weight = { weight = 1 modifier = { factor = 0 resource_stockpile_compare = { resource = energy value < 40000 } } modifier = { factor = 0	OR = { is_mechanical_empire = yes is_cyborg_empire = yes has_authority = auth_machine_intelligence } } }
+}
+
+#LL Tidallylocked Cold
+terraform_link = {
+	from = pc_ll_tidallylocked_cold
+	to = pc_tidallygaia
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_gaia }
+	}
+	duration = @terraforming_duration_gaia
+	condition = { has_ascension_perk = ap_world_shaper }
+	potential = { has_ascension_perk = ap_world_shaper }
+	effect = {
+		from = {
+			remove_modifier = lifeless_tidallylocked_cold
+			remove_deposit = d_eyeball_site
+		}
+	}	
+	ai_weight = { weight = 1 modifier = { factor = 0 resource_stockpile_compare = { resource = energy value < 40000 } } modifier = { factor = 0	OR = { is_mechanical_empire = yes is_cyborg_empire = yes has_authority = auth_machine_intelligence } } }
+}
+#TL Aquatic
+#LL Tidallylocked
+terraform_link = {
+	from = pc_ll_tidallylocked
+	to = pc_tidallyaquatic
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_gaia }
+	}
+	duration = @terraforming_duration_gaia
+	condition = { has_ascension_perk = ap_hydrocentric has_ascension_perk = ap_world_shaper }
+	potential = { has_ascension_perk = ap_hydrocentric has_ascension_perk = ap_world_shaper }
+	effect = {
+		from = {
+			remove_modifier = lifeless_tidallylocked
+			remove_deposit = d_nightside_mining_operations 
+		}
+	}
+	ai_weight = { weight = 1 modifier = { factor = 0 resource_stockpile_compare = { resource = energy value < 40000 } } modifier = { factor = 0	OR = { is_mechanical_empire = yes is_cyborg_empire = yes has_authority = auth_machine_intelligence } } }
+}
+
+#LL Tidallylocked Cold
+terraform_link = {
+	from = pc_ll_tidallylocked_cold
+	to = pc_tidallyaquatic
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_gaia }
+	}
+	duration = @terraforming_duration_gaia
+	condition = { has_ascension_perk = ap_hydrocentric has_ascension_perk = ap_world_shaper }
+	potential = { has_ascension_perk = ap_hydrocentric has_ascension_perk = ap_world_shaper }
+	effect = {
+		from = {
+			remove_modifier = lifeless_tidallylocked_cold
+			remove_deposit = d_eyeball_site
+		}
+	}	
+	ai_weight = { weight = 1 modifier = { factor = 0 resource_stockpile_compare = { resource = energy value < 40000 } } modifier = { factor = 0	OR = { is_mechanical_empire = yes is_cyborg_empire = yes has_authority = auth_machine_intelligence } } }
+}
+
+
+#LL Rogue
+terraform_link = {
+	from = pc_ll_rogue
+	to = pc_rogue
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration }
+	effect = {
+		from = {
+			remove_modifier = lifeless_rogue
+			reroll_deposits = yes
+		}
+	}
+	ai_weight = { weight = 0 }
+}
+
+#Exotic
+
+#LL Methane
+terraform_link = {
+	from = pc_ll_methane
+	to = pc_methane
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }
+	effect = {
+		from = {
+			remove_modifier = lifeless_methane
+			add_modifier = { modifier = methane days = -1 }
+		}
+	}
+	ai_weight = { weight = 0 }
+}
+
+#LL Ash
+terraform_link = {
+	from = pc_ll_ash
+	to = pc_ash
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }
+	effect = {
+		from = {
+			remove_modifier = lifeless_ash
+			add_modifier = { modifier = ash days = -1 }
+		}
+	}
+	ai_weight = { weight = 0 }
+}
+
+#LL Sulfur
+terraform_link = {
+	from = pc_ll_sulfur
+	to = pc_sulfur
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }
+	effect = {
+		from = {
+			remove_modifier = lifeless_sulfur
+			add_modifier = { modifier = pdsulfur days = -1 }
+		}
+	}
+	ai_weight = { weight = 0 }
+}
+
+#LL Ammonia
+terraform_link = {
+	from = pc_ll_ammonia
+	to = pc_ammonia
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_ll }
+	}
+	duration = @terraforming_duration_level_2
+	condition = { has_technology = tech_climate_restoration }
+	potential = { has_technology = tech_climate_restoration has_global_flag = planetarydiversityexotics }
+	effect = {
+		from = {
+			remove_modifier = lifeless_ammonia
+			add_modifier = { modifier = ammonia days = -1 }
+		}
+	}
+	ai_weight = { weight = 0 }
+}

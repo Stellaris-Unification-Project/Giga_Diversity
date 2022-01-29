@@ -1,0 +1,43 @@
+#Vanilla
+#terraforming_candidate
+
+#PD Exotic:
+#terraforming_methane # Frozen > Methane
+#terraforming_ammonia # Toxic > Ammonia
+#terraforming_sulfur #Toxic > Sulfur
+#terraforming_ash #Molten > Ash
+
+#PD Habitat terraforming modifier
+#hab_terraforming_candidate
+
+#Rare world terraforming
+#pdterra_storm
+#pdterra_tidallocked
+#pdterra_glacio
+#pdterra_lanthanide
+#pdterra_rogue
+#pdterra_karst
+#pdterra_geothermal
+#pdterra_superhabitable
+#pdterra_salt
+#pdterra_primal
+#pdterra_lichen
+#pdterra_megaflora
+#pdterra_biolumen
+#pdterra_aquifer
+#pdterra_reef
+#pdterra_coral
+#pdterra_supercon
+#pdterra_aquatic
+
+#GD Unique Lifeless worlds and Habitable Gas Giant
+#lifeless_temperate_terrafrom
+#lifeless_foggy_terrafrom
+#lifeless_torrid_terrafrom
+#lifeless_methane_terrafrom
+#lifeless_ammonia_terrafrom
+#lifeless_ash_terrafrom
+#lifeless_sulfur_terrafrom
+#lifeless_ocean_terrafrom
+#lifeless_rogue_terrafrom
+#habitable_gas_giant_terraform

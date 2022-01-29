@@ -1,0 +1,65 @@
+#Sanctuary Interloper primatives
+generate_sanctuary_primitives_on_planet = {
+	create_species = {
+		name = "Norhasulao"
+		plural = "Norhasulaos"
+		class = random_non_machine
+		portrait = random
+		homeworld = THIS
+		traits = { trait = random_traits }
+	}
+	create_country = {
+		name = "Norhasulao Kingdom"
+		name_list = random
+		authority = random
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created_species
+		ethos = random
+		flag = {
+			icon = {
+				category = "special"
+				file = "primitive.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "new_dawn.dds"
+			}
+			colors = {
+				"dark_purple"
+				"beige"
+				"null"
+				"null"
+			}
+		}
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = machine_age
+		set_primitive_age = machine_age
+		set_country_flag = excognitor_primitives #TODO Create Flag
+	}
+	set_owner = last_created_country
+	set_capital = yes
+	while = { count = 24 create_pop = { species = last_created } }
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings
+	remove_building = building_colony_shelter
+	while = {
+		count = 2
+		create_army = {
+			name = "Norhasulao Defender"
+			owner = last_created
+			species = last_created
+			type = "excognitor_defender"
+		}
+	}
+	every_planet_army = { limit = { NOT = { army_type = excognitor_defender } } remove_army = yes }
+}

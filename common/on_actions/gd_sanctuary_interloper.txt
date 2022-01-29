@@ -1,0 +1,7 @@
+#Sanctuary Interloper
+
+on_game_start_country = {
+	events = {
+		gd_ring.001
+	}
+}

@@ -1,0 +1,5 @@
+# see README.txt for example
+
+terraform_toxic_to_ammonia_0 = {
+	entity = ""
+}

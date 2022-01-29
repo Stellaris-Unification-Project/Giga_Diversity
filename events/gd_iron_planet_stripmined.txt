@@ -1,0 +1,39 @@
+namespace = gd_iron_planet
+
+#This will temporarily despwan the megastructure and the respawn it. this will allow the new Iron Planet to reset the amount of minerals and alloys it yeilds at each step.
+country_event = {
+	id = gd_iron_planet.1
+	title = "gd_iron_planet.1.title"
+	desc = "gd_iron_planet.1.desc"
+	picture = GFX_evt_drilling_for_gas
+	show_sound = event_dyson_sphere_build_complete
+	location = event_target:giga_planet
+
+	is_triggered_only = yes
+
+	option = {
+		name = "gd_iron_planet.1.a"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					is_megastructure_type = automated_stripmine_2
+					planet = { is_planet_class = pc_strip_mined has_planet_flag = pc_iron }
+				}
+				remove_megastructure = this
+			}
+			solar_system.owner = { country_event = { id = gd_iron_planet.2 days = 1 } }
+		}
+	}
+}
+
+country_event = {
+	id = gd_iron_planet.2
+	hide_window = yes
+	location = event_target:giga_planet
+
+	is_triggered_only = yes
+
+	immediate = {
+		solar_system = { spawn_megastructure = { type = automated_stripmine_2 	coords_from = event_target:giga_planet owner = owner } }
+	}
+}

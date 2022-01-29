@@ -1,0 +1,110 @@
+@PDRARE = 0.1
+@PDRARE2 = 0.2
+@PDUNIQUE = 0.1
+@PDMALUS = -0.1
+@PDRAREHALF = 0.05
+
+lifeless_methane = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_methane.dds"
+	icon_frame = 2	
+	planet_jobs_minerals_produces_mult = @PDRARE
+	planet_jobs_physics_research_produces_mult = @PDRARE
+	district_mining_max = 4
+	planet_jobs_food_produces_mult = -0.50
+	planet_building_build_speed_mult = 0.15
+}
+
+lifeless_ammonia = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_ammonia.dds"
+	icon_frame = 2	
+	planet_jobs_energy_produces_mult = @PDRARE
+	district_generator_max = 2
+
+	planet_jobs_minerals_produces_mult = 0.10
+	planet_jobs_food_produces_mult = -0.35
+	planet_jobs_society_research_produces_mult = 0.10
+	planet_building_build_speed_mult = 0.15
+}
+
+lifeless_ash = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_ash.dds"
+	icon_frame = 2
+	planet_jobs_minerals_produces_mult = @PDRARE
+	planet_jobs_energy_produces_mult = @PDRARE
+	district_generator_max = 2
+	district_mining_max = 2
+
+	planet_jobs_food_produces_mult = -0.50
+	planet_jobs_engineering_research_produces_mult = 0.10
+	planet_building_build_speed_mult = 0.15
+}
+
+lifeless_sulfur = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_sulfur.dds"
+	icon_frame = 2
+	planet_jobs_minerals_produces_mult = @PDRARE
+	planet_jobs_society_research_produces_mult = @PDRARE
+	district_mining_max = 4
+
+	planet_jobs_food_produces_mult = -0.50
+	planet_jobs_physics_research_produces_mult = 0.10
+	planet_building_build_speed_mult = 0.15
+}
+
+lifeless_ocean = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_aquatic.dds"
+	icon_frame = 2	
+	planet_jobs_energy_produces_mult = @PDRARE
+	district_generator_max = 2
+	planet_housing_mult = 0.10
+	planet_buildings_upkeep_mult = 0.20
+	planet_jobs_food_produces_mult = -0.35
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_jobs_society_research_produces_mult = 0.05
+}
+
+lifeless_rogue = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_pdrogue.dds"
+	icon_frame = 2	
+	planet_jobs_minerals_produces_mult = @PDRARE
+	planet_jobs_energy_produces_mult = @PDRARE
+	district_mining_max = 2
+	district_generator_max = 2
+	pop_environment_tolerance = -0.10
+
+	planet_jobs_minerals_produces_mult = 0.10
+	planet_jobs_food_produces_mult = -0.60
+	pop_happiness = -0.10
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_society_research_produces_mult = 0.05
+}
+
+lifeless_tidallylocked = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_tidal_locked.dds"
+	icon_frame = 2
+	planet_jobs_energy_produces_mult = @PDRARE
+	district_generator_max = 2
+	planet_housing_mult = -0.3
+	pop_environment_tolerance = -0.15
+	biological_pop_happiness = -0.10
+	lithoid_pop_happiness = -0.10
+
+	planet_jobs_minerals_produces_mult = 0.10
+	planet_jobs_food_produces_mult = -0.35
+	planet_jobs_physics_research_produces_mult = 0.10
+}
+
+lifeless_tidallylocked_cold = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_eyeball.dds"
+	icon_frame = 2
+	planet_jobs_energy_produces_mult = @PDRARE
+	planet_jobs_physics_research_produces_mult = @PDRARE
+	district_generator_max = 4
+	planet_housing_mult = -0.30
+	pop_environment_tolerance = -0.20
+	biological_pop_happiness = -0.10
+	lithoid_pop_happiness = -0.10
+
+	planet_jobs_minerals_produces_mult = 0.10
+	planet_jobs_food_produces_mult = -0.50
+}

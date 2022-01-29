@@ -1,0 +1,107 @@
+# ###########
+# Habitable Planets
+# ###########
+
+# Dry
+
+#pc_desert
+#pc_arid
+#pc_savannah
+
+# Wet
+#pc_tropical
+#pc_continental
+#pc_ocean
+
+# Cold
+#pc_tundra
+#pc_arctic
+#pc_alpine
+
+# ###########
+# Uninhabitable Planets
+# ###########
+
+#pc_gas_giant
+#pc_asteroid
+#pc_ice_asteroid
+#pc_rare_crystal_asteroid
+#pc_molten
+#pc_barren
+#pc_barren_cold
+#pc_toxic
+#pc_frozen
+
+# ###########
+# Special Planets
+# ###########
+
+#pc_nuked
+#pc_hive
+#pc_machine
+#pc_shielded
+#pc_ai
+#pc_infested
+#pc_gaia
+#pc_cybrex
+
+# ##############
+# Megastructures
+# ###############
+
+#pc_ringworld_habitable
+#pc_ringworld_habitable_damaged
+#pc_ringworld_tech
+#pc_ringworld_tech_damaged
+#pc_ringworld_seam
+#pc_ringworld_seam_damaged
+#pc_habitat
+
+#Shattered Ring Origin
+#pc_shattered_ring_habitable
+
+# ##############
+# Unique Planets
+# ##############
+
+#pc_shrouded
+#pc_broken
+#pc_shattered
+
+# ##############
+# Distant Stars
+# ##############
+
+#pc_gray_goo
+#pc_egg_cracked
+
+# ##############
+# Leviathans
+# ##############
+
+#pc_crystal_asteroid
+
+# ##############
+# Apocalypse
+# ##############
+
+#pc_ringworld_shielded
+#pc_habitat_shielded
+
+# ##############
+# Megacorp
+# ##############
+
+#pc_city
+
+# ##############
+# Relic
+# ##############
+
+#pc_relic
+
+# ##############
+# Event Planet
+# ##############
+
+#pc_shattered_2

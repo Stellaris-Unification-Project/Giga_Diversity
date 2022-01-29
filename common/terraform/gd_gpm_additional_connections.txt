@@ -1,0 +1,882 @@
+@terraforming_cost_level_0 = 1250 #<-- same class terraforming
+@terraforming_cost_level_1 = 2500 #<-- same category terraforming
+@terraforming_cost_level_2 = 5000 #<-- different category terraforming
+@terraforming_cost_level_3 = 10000 #<-- opposite category terraforming and uninhabitable to inhabitable terraforming
+@terraforming_cost_level_4 = 15000 #<-- special terraforming, e.g. to gaia, machine world etc.
+
+@terraforming_duration_level_0 = 900 #<-- same class terraforming
+@terraforming_duration_level_1 = 1800 #<-- same category terraforming
+@terraforming_duration_level_2 = 3600 #<-- different category terraforming
+@terraforming_duration_level_3 = 5400 #<-- opposite category terraforming and uninhabitable to inhabitable terraforming
+@terraforming_duration_level_4 = 7200 #<-- special terraforming, e.g. to gaia, machine world etc.
+
+
+####################
+# MOLTEN to X
+####################
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_veld"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_prairie"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_outback"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_coastal"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_med"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_semiarid"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_snow"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_boreal"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_highland"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_mud"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_mushroom"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_aeolian"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_duneforest"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_wetswamp"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_fog"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_retinal"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_forest"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_lake"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_tepid"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_cenote"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_badlands"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_basalt"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+#Exotic
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_methane"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_ammonia"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_ash"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_sulfur"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_irradiated"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_acid"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+####################
+# Frozen to X
+####################
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_veld"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_prairie"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_outback"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_coastal"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_med"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_semiarid"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_snow"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_boreal"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_highland"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_mud"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_mushroom"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_aeolian"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_duneforest"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_wetswamp"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_retinal"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_forest"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_lake"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_tepid"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_cenote"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_badlands"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_basalt"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+
+	ai_weight = { weight = 5  }
+}
+#Exotic
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_methane"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_ammonia"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_ash"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_sulfur"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_irradiated"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_acid"
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_3 }
+	}
+	duration = @terraforming_duration_level_3
+	condition = { has_technology = "tech_climate_restoration" }
+	potential = {
+		AND = {
+			has_global_flag = planetarydiversityexotics
+			from = { has_modifier = terraforming_candidate }
+		}
+	}
+
+	ai_weight = { weight = 5  }
+}

@@ -1,0 +1,33 @@
+#Adding the Habitable Gas Giant Terraform modifier to a Habitat
+
+#This is for Gas Giant Habs of all types.
+decision_habitable_gg_terraform = {
+	owned_planets_only = yes
+	#icon = decision_ecoarcology_project
+	prerequisites = { giga_tech_terraform_gas }
+	enactment_time = 9000
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			alloys = 11000
+			energy = 2700
+		}
+	}
+	potential = {
+	#TODO add additional tech requirements
+		NOT = { has_global_flag = planetaryterraformimpossible }
+		NOT = { has_global_flag = terraform_gasgiant_disabled }
+		NOT = { has_modifier = habitable_gas_giant_terraform}
+		OR = {
+			is_planet_class = pc_pd_gas_giant_hab
+		}
+	}
+	effect = {
+		# Add Terraform Modifier that allows terraform into a lifeless world
+		hidden_effect = {
+			add_modifier = { modifier = habitable_gas_giant_terraform }
+		}
+	}
+	ai_weight = { weight = 5 }
+}

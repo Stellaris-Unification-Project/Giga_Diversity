@@ -1,0 +1,366 @@
+namespace = gdengine
+
+event = {
+	id = gdengine.00
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { set_global_flag = gigadiversity }
+}
+
+#Exotic Great Ring Start
+planet_event = {
+	id = gdengine.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+			owner = { has_origin = origin_great_ring }
+	}
+
+	immediate = {
+		if = {
+			limit = { owner = { has_trait = trait_pc_ammonia_preference } NOT = { has_modifier = pdammoniaatmosphere } }
+			add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_sulfur_preference } NOT = { has_modifier = pdsulfuratmosphere } }
+			add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_methane_preference } NOT = { has_modifier = pdmethaneatmosphere } }
+			add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_ash_preference } NOT = { has_modifier = pdashatmosphere } }
+			add_modifier = { modifier = pdashatmosphere days = -1 }	
+		}
+	}
+}
+#Exotic Interstellar Ring Start
+planet_event = {
+	id = gdengine.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+			owner = { has_origin = origin_interstellar_ring }
+	}
+
+	immediate = {
+		solar_system = {
+			every_system_planet = {
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ammonia_preference } OR = { is_planet_class = pc_interstellar_habitat is_planet_class = pc_interstellar_ringworld_habitable } NOT = { has_modifier = pdammoniaatmosphere } }
+					add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_sulfur_preference } OR = { is_planet_class = pc_interstellar_habitat is_planet_class = pc_interstellar_ringworld_habitable } NOT = { has_modifier = pdsulfuratmosphere } }
+					add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_methane_preference } OR = { is_planet_class = pc_interstellar_habitat is_planet_class = pc_interstellar_ringworld_habitable } NOT = { has_modifier = pdmethaneatmosphere } }
+					add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ash_preference } OR = { is_planet_class = pc_interstellar_habitat is_planet_class = pc_interstellar_ringworld_habitable } NOT = { has_modifier = pdashatmosphere } }
+					add_modifier = { modifier = pdashatmosphere days = -1 }	
+				}
+			}
+		}
+	}
+}
+#Exotic Penrose Start
+planet_event = {
+	id = gdengine.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+			owner = { has_origin = origin_penrose_ring }
+	}
+
+	immediate = {
+		solar_system = {
+			every_system_planet = {
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ammonia_preference } is_planet_class = pc_giga_penrose_habitable NOT = { has_modifier = pdammoniaatmosphere } }
+					add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_sulfur_preference } is_planet_class = pc_giga_penrose_habitable NOT = { has_modifier = pdsulfuratmosphere } }
+					add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_methane_preference } is_planet_class = pc_giga_penrose_habitable NOT = { has_modifier = pdmethaneatmosphere } }
+					add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ash_preference } is_planet_class = pc_giga_penrose_habitable NOT = { has_modifier = pdashatmosphere } }
+					add_modifier = { modifier = pdashatmosphere days = -1 }	
+				}
+			}
+		}
+	}
+}
+
+#Exotic Gas Giant Start
+planet_event = {
+	id = gdengine.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+			owner = { has_origin = origin_gas_giant }
+	}
+
+	immediate = {
+		if = {
+			limit = { owner = { has_trait = trait_pc_ammonia_preference } NOT = { has_modifier = pdammoniaatmosphere } }
+			add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_sulfur_preference } NOT = { has_modifier = pdsulfuratmosphere } }
+			add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_methane_preference } NOT = { has_modifier = pdmethaneatmosphere } }
+			add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_ash_preference } NOT = { has_modifier = pdashatmosphere } }
+			add_modifier = { modifier = pdashatmosphere days = -1 }	
+		}
+	}
+}
+
+#Exotic Elysium Start
+planet_event = {
+	id = gdengine.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+			owner = { has_origin = origin_elysium }
+	}
+
+	immediate = {
+		if = {
+			limit = { owner = { has_trait = trait_pc_ammonia_preference } NOT = { has_modifier = pdammoniaatmosphere } }
+			add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_sulfur_preference } NOT = { has_modifier = pdsulfuratmosphere } }
+			add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_methane_preference } NOT = { has_modifier = pdmethaneatmosphere } }
+			add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_ash_preference } NOT = { has_modifier = pdashatmosphere } }
+			add_modifier = { modifier = pdashatmosphere days = -1 }	
+		}
+	}
+}
+
+#Exotic Squareworld Start
+planet_event = {
+	id = gdengine.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+			owner = { has_origin = origin_squareworld }
+	}
+
+	immediate = {
+		if = {
+			limit = { owner = { has_trait = trait_pc_ammonia_preference } NOT = { has_modifier = pdammoniaatmosphere } }
+			add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_sulfur_preference } NOT = { has_modifier = pdsulfuratmosphere } }
+			add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_methane_preference } NOT = { has_modifier = pdmethaneatmosphere } }
+			add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+		}
+		if = {
+			limit = { owner = { has_trait = trait_pc_ash_preference } NOT = { has_modifier = pdashatmosphere } }
+			add_modifier = { modifier = pdashatmosphere days = -1 }	
+		}
+	}
+}
+
+
+#Exotic Planetary Habitat start
+planet_event = {
+	id = gdengine.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			owner = { has_origin = origin_pd_sol_hab_start }
+			owner = { has_origin = origin_pd_snowball_earth }
+		}
+	}
+
+	immediate = {
+		solar_system = {
+			every_system_planet = {
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ammonia_preference } OR = { is_planet_class = pc_pd_barren_hab is_planet_class = pc_pd_barren_cold_hab } NOT = { has_modifier = pdammoniaatmosphere } }
+					add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_sulfur_preference } OR = { is_planet_class = pc_pd_barren_hab is_planet_class = pc_pd_barren_cold_hab } NOT = { has_modifier = pdsulfuratmosphere } }
+					add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_methane_preference } OR = { is_planet_class = pc_pd_barren_hab is_planet_class = pc_pd_barren_cold_hab } NOT = { has_modifier = pdmethaneatmosphere } }
+					add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ash_preference } OR = { is_planet_class = pc_pd_barren_hab is_planet_class = pc_pd_barren_cold_hab } NOT = { has_modifier = pdashatmosphere } }
+					add_modifier = { modifier = pdashatmosphere days = -1 }	
+				}
+			}
+		}
+	}
+}
+
+#Exotic Equatorial Shipyard start
+planet_event = {
+	id = gdengine.8
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+			owner = { has_origin = origin_equatorial_shipyard }
+	}
+
+	immediate = {
+		solar_system = {
+			every_system_planet = {
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ammonia_preference } is_planet_class = pc_equatorial_shipyard NOT = { has_modifier = pdammoniaatmosphere } }
+					add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_sulfur_preference } is_planet_class = pc_equatorial_shipyard NOT = { has_modifier = pdsulfuratmosphere } }
+					add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_methane_preference } is_planet_class = pc_equatorial_shipyard NOT = { has_modifier = pdmethaneatmosphere } }
+					add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				}
+				if = {
+					limit = { solar_system.owner = { has_trait = trait_pc_ash_preference } is_planet_class = pc_equatorial_shipyard NOT = { has_modifier = pdashatmosphere } }
+					add_modifier = { modifier = pdashatmosphere days = -1 }	
+				}
+			}
+		}
+	}
+}
+
+#Remove Modifiers that no longer make sense
+
+country_event = {
+	id = gdengine.9
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	#Remove GPM, PD, GE, or vanilla modifiers that are no longer needed.
+	immediate = {
+		#every_galaxy_planet = { 
+			#remove_modifier = gpm_iron_planet
+		#}
+	}
+}
+
+#Mark world as checked for Exotic Modifiers from initial creation
+country_event = {
+	id = gdengine.10
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	#Set Flag on every planet as checked
+	immediate = {
+		every_galaxy_planet = {
+			limit = { has_global_flag = planetarydiversityexotics }
+			set_planet_flag = exoticmodifierschecked
+		}
+	}
+}
+
+#Mark world as checked for Vanilla Modifiers from initial creation
+country_event = {
+	id = gdengine.11
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	#Set Flag on every planet as checked
+	immediate = {
+		every_galaxy_planet = {
+			set_planet_flag = terraformmodifierchecked
+		}
+	}
+}
+
+#Mark world as checked for Rare Terraforming Modifiers from initial creation
+country_event = {
+	id = gdengine.12
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	#Set Flag on every planet as checked
+	immediate = {
+		every_galaxy_planet = {
+			set_planet_flag = rareterraformmodifierchecked
+		}
+	}
+}
+
+#Mark world as checked for habitat modifiers from initial creation
+country_event = {
+	id = gdengine.13
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	#Set Flag on every planet as checked
+	immediate = {
+		every_galaxy_planet = {
+			limit = { has_global_flag = planetarydiversityhabitats }
+			set_planet_flag = pdhabitatmodifierchecked
+		}
+	}
+}
+
+#remove
+country_event = {
+	id = gdengine.14
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	#Remove Vanilla Tidally Locked Modifier
+	immediate = {
+		every_galaxy_planet = { 
+			remove_modifier = tidal_locked
+		}
+		every_galaxy_planet = { 
+			remove_modifier = chthonian_planet	
+		}
+		every_galaxy_planet = { 
+			remove_modifier = carbon_world	
+		}
+		every_galaxy_planet = { 
+			remove_modifier = gpm_iron_planet
+		}
+		every_galaxy_planet = { 
+			remove_modifier = gpm_carbon_planet
+		}
+	}
+}

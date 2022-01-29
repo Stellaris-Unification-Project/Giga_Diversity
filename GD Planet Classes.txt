@@ -1,0 +1,35 @@
+#New Habitats added for this mod. These Habitats were removed 19 November 2021 in the Dev verision. The last habitat that was remaining was the Hydrocarbon World. The method for creating a HydroCarbon Habitat was changed to the same method that the PD creator started to use for the Volcanic and Subglacial Worlds
+
+#Removed from the mod
+#pc_gd_subglacial_hab
+#pc_gd_volcanic_hab
+#pc_gd_hydrocarbon_hab
+
+#City Ringworlds from PD
+
+#Exotic Lifeless Worlds
+#LL Methane
+#pc_ll_methane
+
+#LL Ash
+#pc_ll_ash
+
+#LL Sulfur
+#pc_ll_sulfur
+
+#LL Ammonia
+#pc_ll_ammonia
+
+#Ocean Lifeless World
+#LL Ocean
+#pc_ll_ocean
+
+#Rare Lifeless Worlds
+#LL Tidallylocked Cold
+#pc_ll_tidallylocked_cold
+
+#LL Tidallylocked
+#pc_ll_tidallylocked
+
+#LL Rogue
+#pc_ll_rogue

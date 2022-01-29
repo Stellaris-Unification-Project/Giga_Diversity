@@ -1,0 +1,1205 @@
+namespace = gdterraformmodspawn
+
+event = {
+	id = gdterraformmodspawn.0
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_galaxy_planet = {
+			limit = {  
+				NOT = {
+					OR = {
+						has_planet_flag = terraformmodifierchecked
+						has_planet_flag = exoticmodifierschecked
+						has_planet_flag = rareterraformmodifierchecked
+					}
+				}
+			}
+			if = { limit = { NOT = { has_planet_flag = terraformmodifierchecked } }
+				planet = { planet_event = { id = gdterraformmodspawn.1 } }
+			}
+			if = {
+				limit = {
+					NOT = { has_planet_flag = exoticmodifierschecked }
+					has_global_flag = planetarydiversityexotics
+				}
+				planet = { planet_event = { id = gdterraformmodspawn.2 } }
+			}
+			if = { limit = { NOT = { has_planet_flag = rareterraformmodifierchecked } }
+				planet = { planet_event = { id = gdterraformmodspawn.2 } }
+			}
+		}
+	}
+}
+
+#Vanilla
+planet_event = {
+	id = gdterraformmodspawn.1
+	hide_window = yes
+	is_triggered_only = yes
+	#Terraforming Candidate
+	immediate = {
+		planet = {
+			if = { 
+				limit = {  
+					NOT = { has_planet_flag = terraformmodifierchecked }
+				}
+				set_planet_flag = terraformmodifierchecked
+				if = {
+					limit = {
+						OR = {
+							is_planet_class = pc_hothouse
+							is_planet_class = pc_barren
+							is_planet_class = pc_barren_cold
+						}
+						NOT = { has_modifier = terraforming_candidate }	
+						planet_size > 9
+						planet_size < 26	
+						solar_system = {
+							NOR = {
+								is_star_class = sc_black_hole
+								is_star_class = sc_neutron_star
+								is_star_class = sc_pulsar
+								is_star_class = sc_giga_o_star
+							}
+						}
+					}	
+					random_list = {
+						2 = { add_modifier = {	modifier = terraforming_candidate days = -1	} }
+						98 = { }	
+					}
+				}
+			}
+		}
+	}
+}
+
+#Exotic Modifiers
+planet_event = {
+	id = gdterraformmodspawn.2
+	hide_window = yes
+	is_triggered_only = yes
+	#Exotic Terraforming Candidate
+
+	trigger = {
+		has_global_flag = planetarydiversityexotics
+	}
+	immediate = {
+		planet = {
+			if = { 
+				limit = {  
+					NOT = { has_planet_flag = exoticmodifierschecked }
+				}
+				set_planet_flag = exoticmodifierschecked
+				if = {
+					limit = {
+						planet_size > 9
+						planet_size < 26
+						solar_system = {
+							NOR = {
+								is_star_class = sc_black_hole
+								is_star_class = sc_neutron_star
+								is_star_class = sc_pulsar
+								is_star_class = sc_giga_o_star
+							}
+						}
+					}
+					if = {
+						limit = {  
+							OR = {
+								is_planet_class = pc_frozen
+								is_planet_class = pc_hydrocarbon
+								is_planet_class = pc_ethane_ocean
+							}
+							not = { has_modifier = terraforming_methane }
+						}	
+						random_list = {
+							10 = { 
+								add_modifier = {	modifier = terraforming_methane days = -1	} 
+							}
+							90 = { }	
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								is_planet_class = pc_toxic
+								is_planet_class = pc_hothouse
+								is_planet_class = pc_volcanic
+							}
+							not = { has_modifier = terraforming_sulfur }
+						}	
+						random_list = {
+							10 = { 
+								add_modifier = {	modifier = terraforming_sulfur days = -1	} 
+							}
+							90 = { }	
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								is_planet_class = pc_toxic
+								is_planet_class = pc_hothouse
+							}
+							not = { has_modifier = terraforming_ammonia }
+						}	
+						random_list = {
+							10 = { 
+								add_modifier = {	modifier = terraforming_ammonia days = -1	} 
+							}
+							90 = { }	
+						}
+					}
+					if = {
+						limit = { 
+							OR  = { 
+								is_planet_class = pc_molten
+								is_planet_class = pc_volcanic
+							}
+							not = { has_modifier = terraforming_ash }
+							NOT = { has_planet_flag = equatorial_shipyard_home_mining_target } #Check for the flag used by the Equatorial shipyard origin to mark the home planet. This world should have the Ash Terraforming modifier.
+						}	
+						random_list = {
+							10 = { 
+								add_modifier = { modifier = terraforming_ash days = -1	} 
+							}
+							90 = { }	
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Rare World Terraforming
+planet_event = {
+	id = gdterraformmodspawn.3
+	hide_window = yes
+	is_triggered_only = yes
+	#Rare Terraforming Candidate
+	immediate = {
+		planet = {
+			if = { 
+				limit = {  
+					NOT = { has_planet_flag = rareterraformmodifierchecked }
+				}
+				set_planet_flag = rareterraformmodifierchecked
+				#Tidally Locked Barren
+				if = {
+					limit = {
+						is_planet_class = pc_barren
+						planet_size > 11 
+						planet_size < 26 
+						is_moon = no 
+						is_homeworld = no
+						solar_system = { any_system_planet = { is_planet_class = pc_m_star } } 
+						NOR = { 
+							has_moon = yes  
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							198 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							398 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							596 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							796 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							8 = { set_planet_flag = raremodifiers }
+							992 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_tidallylocked_barren 
+						clear_planet_modifiers = yes 
+						remove_modifier = terraforming_candidate
+						clear_deposits = yes  
+						add_deposit = d_physics_5 
+						add_modifier = { modifier = pdterra_tidallocked }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Rogue
+				if = {
+					limit = {
+						OR = {
+							is_planet_class = pc_barren_cold 
+							is_planet_class = pc_broken
+						}
+						planet_size > 11 
+						planet_size < 26 
+						is_moon = no
+						is_homeworld = no 
+						solar_system = { any_system_planet = { is_planet_class = pc_black_hole } } 
+						NOR = { 
+							has_moon = yes  
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { }
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_rogue_barren 
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_physics_5 
+						add_modifier = { modifier = pdterra_rogue }
+						remove_planet_flag = raremodifiers
+					}
+				}			
+				#Lanthanide
+				if = {
+					limit = {
+						is_planet_class = pc_barren_cold
+						planet_size > 11 
+						planet_size < 26
+						is_homeworld = no
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_minerals_5 
+						add_modifier = { modifier = pdterra_lanthanide }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Krast
+				if = {
+					limit = {
+						is_planet_class = pc_barren_cold
+						planet_size > 11 
+						planet_size < 26
+						is_homeworld = no
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster }
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { }
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_minerals_5 
+						add_modifier = { modifier = pdterra_karst }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				
+				#Geothermal
+				if = {
+					limit = {
+						is_planet_class = pc_barren_cold
+						planet_size > 11 
+						planet_size < 26
+						is_homeworld = no
+						NOR = { 
+							has_planet_flag = pd_ignore  
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster }
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_alloys_5 
+					add_modifier = { modifier = pdterra_geothermal }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Superhabitable
+				if = {
+					limit = {
+						is_planet_class = pc_barren 
+						planet_size > 25 
+						planet_size < 31
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_minerals_5 
+						add_modifier = { modifier = pdterra_superhabitable }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Salt
+				if = {
+					limit = {
+						is_planet_class = pc_barren 
+						planet_size > 10 
+						planet_size < 26
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster }
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_minerals_5 
+						add_modifier = { modifier = pdterra_salt }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Primal
+				if = {
+					limit = { 
+						is_planet_class = pc_molten 
+						planet_size > 10 
+						planet_size < 26
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster }
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { }
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_alloys_5
+						add_modifier = { modifier = pdterra_primal }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Aquatic
+				if = {
+					limit = {  
+						is_planet_class = pc_frozen
+						planet_size > 10 
+						planet_size < 26
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster }
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							198 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							398 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							3 = { set_planet_flag = raremodifiers }
+							597 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							3 = { set_planet_flag = raremodifiers }
+							797 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							8 = { set_planet_flag = raremodifiers }
+							992 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						clear_planet_modifiers = yes 
+						clear_deposits = yes  
+						add_deposit = d_society_5 
+						add_modifier = { modifier = pdterra_aquatic }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Storm
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_glacial 
+							is_planet_class = pc_arctic 
+							is_planet_class = pc_frozen_desert
+							is_planet_class = pc_aeolian 
+							is_planet_class = pc_antarctic 
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_storm
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { }
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_glacial
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_storm }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Lichen
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_tundra 
+							is_planet_class = pc_mushroom 
+							is_planet_class = pc_mud
+							is_planet_class = pc_swamp
+							is_planet_class = pc_basalt 
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_lichen
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_tundra
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_lichen }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Glacio
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_alpine 
+							is_planet_class = pc_boreal 
+							is_planet_class = pc_highland
+							is_planet_class = pc_duneforest
+							is_planet_class = pc_snow 
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_glacio
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_alpine
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_glacio }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Megaflora
+				if = {
+					limit =	 { 
+					OR = {
+							is_planet_class = pc_continental 
+							is_planet_class = pc_forest 
+							is_planet_class = pc_retinal
+							is_planet_class = pc_tepid
+							is_planet_class = pc_lake 
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_megaflora
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_forest
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_megaflora }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Biolumen
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_tropical 
+							is_planet_class = pc_mangrove 
+							is_planet_class = pc_hajungle
+							is_planet_class = pc_cenote
+							is_planet_class = pc_desertislands
+						}
+						is_homeworld = no 
+						NOR = {  
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_biolumen
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_tropical	
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_biolumen }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Reef
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_ocean 
+							is_planet_class = pc_fog 
+							is_planet_class = pc_cascadian
+							is_planet_class = pc_subarctic
+							is_planet_class = pc_wetswamp
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore   
+							has_planet_flag = living_planet
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_reef
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { }
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_ocean
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_reef }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Aquifer
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_sandsea 
+							is_planet_class = pc_desert 
+							is_planet_class = pc_oasis
+							is_planet_class = pc_outback
+							is_planet_class = pc_coastal
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_aquifer
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_sandsea
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_aquifer }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#Coral
+				if = {
+					limit = { 
+						OR = {
+							is_planet_class = pc_arid 
+							is_planet_class = pc_mesa
+							is_planet_class = pc_med
+							is_planet_class = pc_hadesert
+							is_planet_class = pc_badlands
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_coral
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { } 
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_arid
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_coral }
+						remove_planet_flag = raremodifiers
+					}
+				}
+				#SuperCon
+				if = {																									
+					limit = { 
+						OR = {
+							is_planet_class = pc_savannah 
+							is_planet_class = pc_semiarid 
+							is_planet_class = pc_steppe
+							is_planet_class = pc_prairie
+							is_planet_class = pc_veld
+						}
+						is_homeworld = no 
+						NOR = { 
+							has_planet_flag = pd_ignore 
+							#GD change Giga lifeless system
+							solar_system = { is_star_class = sc_giga_o_star }
+							#End of gd additions
+							solar_system = { has_star_flag = empire_cluster } 
+							has_modifier = pdterra_supercon
+						}
+					}
+					if = { limit = { galaxy_size = tiny } #200
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							199 = { }
+							}
+					}
+					else_if = { limit = { galaxy_size = small } #400
+						random_list = {
+							1 = { set_planet_flag = raremodifiers }
+							399 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = medium } #600
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							598 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = large } #800
+						random_list = {
+							2 = { set_planet_flag = raremodifiers }
+							798 = { }
+						}
+					}
+					else_if = { limit = { galaxy_size = huge } #1000
+						random_list = {
+							4 = { set_planet_flag = raremodifiers }
+							996 = { }
+						}
+					}
+					if = { limit = { has_planet_flag = raremodifiers }
+						change_pc = pc_savannah
+						set_planet_flag = pd_ignore
+						clear_planet_modifiers = yes 
+						add_modifier = { modifier = pdterra_supercon }
+						remove_planet_flag = raremodifiers
+					}
+				}
+			}
+		}
+	}
+}

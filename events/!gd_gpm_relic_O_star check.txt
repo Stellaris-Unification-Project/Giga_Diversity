@@ -1,0 +1,68 @@
+#Overwriting one event from gpm_engine_NEW.txt
+
+namespace = gpm_engine
+
+country_event = {
+	id = gpm_engine.999
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	immediate = {
+		random_galaxy_planet = {
+			limit = { 
+				is_moon = no
+				gpm_is_planet_class_normal_uninhabitable = yes
+				has_owner = no
+				NOT = { exists = space_owner }
+				#Check for O Star that was added in Giga
+				solar_system = { NOT = { is_star_class = sc_giga_o_star } }
+				
+			}
+			gpm_create_primitive_relic_world = yes
+		}		
+		random_galaxy_planet = {
+			limit = { 
+				is_moon = yes
+				gpm_is_planet_class_normal_uninhabitable = yes
+				has_owner = no
+				NOT = { exists = space_owner }
+				#Check for O Star that was added in Giga
+				solar_system = { NOT = { is_star_class = sc_giga_o_star } }
+			}
+			gpm_create_primitive_relic_world = yes
+		}
+		random_list = {
+			50 = { }
+			25 = {
+				random_galaxy_planet = {
+					limit = { 
+						is_moon = yes
+						gpm_is_planet_class_normal_uninhabitable = yes
+						has_owner = no
+						NOT = { exists = space_owner }
+						#Check for O Star that was added in Giga
+						solar_system = { NOT = { is_star_class = sc_giga_o_star } }
+					}
+					gpm_create_primitive_relic_world = yes
+				}
+			}
+			25 = {
+				random_galaxy_planet = {
+					limit = { 
+						is_moon = no
+						gpm_is_planet_class_normal_uninhabitable = yes
+						has_owner = no
+						NOT = { exists = space_owner }
+						#Check for O Star that was added in Giga
+						solar_system = { NOT = { is_star_class = sc_giga_o_star } }
+					}
+					gpm_create_primitive_relic_world = yes
+				}
+			}
+		}
+	}
+}

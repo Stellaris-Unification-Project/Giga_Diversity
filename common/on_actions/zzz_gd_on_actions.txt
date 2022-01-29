@@ -1,0 +1,49 @@
+#Set Global Flag for Giga Diversity
+on_game_start = {
+	events = {
+		gdengine.00  #Set Global Flag for Giga Diversity
+	}
+}
+
+
+#Set Global Flags for optional mods.
+on_press_begin = { #I could not retire this code because the global flags were being set after the code that adds exotic terraforming modifiers which meant that none of the modifiers were being added ever
+	events = { 
+		gdmodinstallcheck.00 #this checks for 
+		pdengine.56
+		pdengine.57
+		pdengine.58
+		pdengine.59
+		gdengine.10 #set planet flags for exotic terraforming modifiers
+		gdengine.13 #GD: mark every spawned planet at the start of the game as being checked for if the PD Habitat modifiers needed to be added.
+		pdengine.04 #remove incompatible modifiers from planets
+	}
+}
+
+#Exotic Origins
+#Disabled until furthur notice
+on_game_start_country = {
+	events = {
+		#gd_exotic_origin.001
+	}
+}
+
+empire_init_capital_planet = {
+	events = {
+		gdengine.1
+		gdengine.2
+		gdengine.3
+		gdengine.4
+		gdengine.5
+		gdengine.6
+		gdengine.7
+		gdengine.8
+	}
+}
+
+# Check if worlds have not been checked for terraforming modifiers
+#on_monthly_pulse = {
+#	events = {
+#		gdterraformmodspawn.0
+#	}
+#}

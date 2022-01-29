@@ -1,0 +1,5 @@
+# see README.txt for example
+
+pd_barren_hab_0 = {
+	entity = ""
+}

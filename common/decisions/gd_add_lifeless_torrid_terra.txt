@@ -1,0 +1,55 @@
+#Adding the Lifeless Torrid Terraform modifier to a Habitat
+
+#This is for Molten Habs of all types except for those that have equatorial shipyard. It would invalidate the equatorial shipyard to terraform the molten world
+decision_ll_torrid_terraform = {
+	owned_planets_only = yes
+	#icon = decision_ecoarcology_project
+	prerequisites = { giga_tech_terraform_molten }
+	enactment_time = 3780
+	resources = {
+		category = decisions
+		cost = {
+			influence = 75
+			alloys = 7260
+			energy = 3360
+		}
+	}
+	potential = {
+	#TODO add additional tech requirements
+		NOR = { 
+			has_global_flag = planetaryterraformimpossible
+			has_global_flag = geothermal_disabled
+			#If everything is coded correctly in PD then terraforming_candidate is always replaced with hab_terraforming_candidate. checking for both in case there are any errors in code
+			has_modifier = terraforming_candidate
+			has_modifier = hab_terraforming_candidate
+			#Commented out exotic. Enable additional checks as needed for extotic checks. For ease of copying code
+			#has_modifier = terraforming_ash
+			#has_modifier = terraforming_ammonia
+			#has_modifier = terraforming_sulfur
+			#has_modifier = terraforming_methane
+
+		}
+		NOT = { has_modifier = lifeless_torrid_terrafrom }
+		OR = {
+			is_planet_class = pc_pd_molten_hab
+		}
+	}
+	effect = {
+		# Add Terraform Modifier that allows terraform into a lifeless world
+		hidden_effect = {
+			#remove_planet_flag = pdhab #TODO add this flag removal to terraforming
+			#remove_planet_flag = pdhab_volcanic #TODO add this flag removal to terraforming
+			#remove_planet_flag = pd_mining_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d1 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_hab_d2 #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_energy_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_science_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_commercial_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_farming_hab #TODO add this flag removal to terraforming 
+			#remove_planet_flag = pd_foundry_hab #TODO add this flag removal to terraforming
+			add_modifier = { modifier = lifeless_torrid_terrafrom }
+			#giga_reroll_lifeless = yes #TODO add this flag removal to terraforming checks
+		}
+	}
+	ai_weight = { weight = 5 }
+}

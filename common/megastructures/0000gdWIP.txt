@@ -1,0 +1,75 @@
+#aqua habitat: colonize melted frozen worlds? Just an idea
+#hydrocarbon world habitat
+
+#giga terraforming options for exotic and aquatic habitability
+#Frozen/Hydrocarbon/EthaneOcean>>LL Methane>>something like dyn core
+#Molten/Volcano>>LL Ash>>something like geo stab
+#Volcano>>LL Sulfur>>something like geo stab
+#Toxic/Hothouse>>LL Sulfur>>something like Atmosphere puri
+#Toxic/Hothouse>>LL Amomonia>>something like Atmosphere puri
+#Frozen/Subglacial>>LL Ocean>>something like dyn core
+
+
+
+#giga terraforming for gray goo worlds
+
+
+
+#Normal Giga addition 
+#pc_ethane_ocean>Lifeless Foggy/AP
+#DCI Core Jumpstart
+
+#Methane Terraforming notes: LL Methane
+
+#Methane terra megas
+#AP: pc_hothouse, pc_ethane_ocean, pc_hydrocarbon, pc_toxic
+#DCI/with some AP: pc_diamond, pc_iron, pc_chthonian, pc_subglacial, pc_carbon, pc_barren, pc_barren_cold, pc_frozen
+#GS/with some AP: pc_volcanic, pc_molten
+
+
+#Ash Terraforming notes: LL Ash
+
+#Ash terra megas
+#AP: pc_hothouse, pc_toxic
+#DCI/with some AP: pc_diamond, pc_iron, pc_chthonian, pc_ethane_ocean, pc_subglacial, pc_hydrocarbon, pc_carbon, pc_barren, pc_barren_cold, pc_frozen
+#GS: pc_volcanic, pc_molten
+
+#Ammonia Terraforming notes: LL Ammonia
+
+#Ammonia Terra megas
+#AP: pc_hothouse, pc_ethane_ocean, pc_hydrocarbon, pc_toxic
+#DCI/with some AP: pc_diamond, pc_iron, pc_chthonian, pc_subglacial, pc_carbon, pc_barren, pc_barren_cold, pc_frozen
+#GS/with some AP: pc_volcanic, pc_molten
+
+#Sulfur Terraforming notes: LL Sulfur
+
+#Sulfur Terra megas
+#AP: pc_hothouse, pc_toxic
+#DCI/with some AP: pc_diamond, pc_iron, pc_chthonian, pc_ethane_ocean, pc_subglacial, hydrocarbon, pc_carbon, pc_barren, pc_barren_cold, pc_frozen
+#GS: pc_volcanic
+#GS/with some AP: pc_molten
+
+#LL Ocean Terraforming notes: LL Ocean
+
+#LL Ocean Terra megas
+#AP/with some WD: pc_hothouse, pc_ethane_ocean, pc_toxic
+#DCI: pc_subglacial, pc_frozen
+#DCI/with some AP: pc_hydrocarbon
+#DCI/with some WD: pc_diamond, pc_iron, pc_chthonian, pc_carbon, pc_barren, pc_barren_cold
+#GS/with some WD: pc_volcanic, pc_molten
+
+#LL Tidally-Locked Normal/Cold Terraforming notes: LL Tidally-Locked/LL Tidally-Locked Cold
+#LL Tidally-Locked: pc_hothouse, pc_diamond, pc_iron, pc_chthonian, pc_toxic, pc_carbon, pc_barren, pc_volcanic, pc_molten
+#LL Tidally-Locked Cold: pc_ethane_ocean, pc_hydrocarbon, pc_subglacial, pc_barren_cold, pc_frozen
+
+#LL Tidally-Locked Terra megas:
+#AP/with SD: pc_hothouse, pc_ethane_ocean, pc_hydrocarbon, pc_toxic
+#DCI/with SD: pc_diamond, pc_iron, pc_chthonian, pc_subglacial, pc_carbon, pc_barren, pc_barren_cold, pc_frozen
+#GS/with SD: pc_volcanic, pc_molten
+
+#LL Rogue Terraforming notes: LL Rogue
+
+#LL Rogue Terra megas
+#AP: pc_hothouse, ethane_ocean, toxic
+#DCI: pc_diamond, pc_iron, pc_chthonian, pc_subglacial, pc_carbon, pc_barren, pc_barren_cold, pc_frozen
+#GS: pc_volcanic, pc_molten

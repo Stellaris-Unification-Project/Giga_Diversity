@@ -1,0 +1,79 @@
+namespace = ehof_systems
+
+@resource_rare_cost			= 10	# Cost per 1. 10 = 10 x standard resource worth.
+@resource_strategic_cost	= 3		# Cost per 1. 3 = 3 x standard resource worth.
+@deposit_multiplier			= 9		# The total amount of materials a system should have. Lower = more materials per system.
+@strategic_fraction			= 4		# The amount of total resources that should be strategic resources. 4 = 1/4, 5 = 1/5, etc.
+@rare_system_multiplier		= 4.00
+@urmazin_system_multiplier	= 3.00
+@quest_system_multiplier	= 2.00
+@standard_system_multiplier	= 1.00
+
+
+country_event = {
+	id = ehof_systems.1234
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	    has_country_flag = should_spawn_covesive_@root
+	}
+
+	immediate = {
+
+	    remove_country_flag = should_spawn_covesive_@root
+
+	    random_list = {
+        	25 = {
+        		modifier = { factor = 0 NOT = { has_global_flag = annihilator_system_spawned } }
+        		modifier = {
+        			factor = 0.2
+        			any_system = {
+        				annihilator_system = yes
+        				empire_has_visited = yes
+        			}
+        		}
+        		random_system = {
+        			limit = { annihilator_system = yes }
+        			ehof_start_lifecycle = yes
+        		}
+        	}
+        	25 = { # Trader hub
+        		modifier = {
+        			factor = 0
+        			OR = {
+        				any_owned_fleet = {
+        					exists = solar_system
+        					solar_system = { urmazin_system = yes }
+        				}
+        				has_country_flag = ehof_recently_visited_trader
+        				has_global_flag = compound_invasion_ongoing
+        				check_variable = { which = ehof_phase value < 3 }
+        				NOT = { has_global_flag = ehof_traders_spawned }
+        			}
+        		}
+        		set_timed_country_flag = { flag = ehof_recently_visited_trader days = @ehof_trader_visiting_days }
+        		random_system = {
+        			limit = { urmazin_capital = yes }
+        			ehof_start_lifecycle = yes
+        		}
+        	}
+        	50 = {
+        		country_event = { id = ehof_systems.000 }
+        	}
+        }
+
+	    # save ehof home system
+        ehof_mega_system = yes
+		country_event = { id = ehof_megastructure.501 }
+		#GD added events that add modifiers
+		every_galaxy_planet = {
+			planet_event = { id = gdterraformmodspawn.1 }
+			planet_event = { id = gdterraformmodspawn.2 }
+			planet_event = { id = gdterraformmodspawn.3 }
+			planet_event = { id = gdpdhabmodifiers.00 }
+			planet_event = { id = gdpdraremodifiers.00 }
+			planet_event = { id = gd_gpm_modifiers.00 }
+		}
+	}
+}

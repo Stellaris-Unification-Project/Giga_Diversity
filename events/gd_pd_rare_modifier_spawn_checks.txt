@@ -1,0 +1,206 @@
+namespace = gdpdraremodifiers
+
+#adding the rare world and exotic world modifiers
+planet_event = {
+	id = gdpdraremodifiers.00
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		planet = {
+			#Methane
+			if = {
+				limit = {
+					is_planet_class = pc_methane
+					NOT = { has_modifier = "methane" }
+				}
+				add_modifier = { modifier = "methane" days = -1 }
+			}
+			#Ammonia
+			if = {
+				limit = {
+					is_planet_class = pc_ammonia
+					NOT = { has_modifier = "ammonia" }
+				}
+				add_modifier = { modifier = "ammonia" days = -1 }
+			}
+			#Sulfur
+			if = {
+				limit = {
+					is_planet_class = pc_sulfur
+					NOT = { has_modifier = "pdsulfur" }
+				}
+				add_modifier = { modifier = "pdsulfur" days = -1 }
+			}
+			#Acid
+			if = {
+				limit = {
+					is_planet_class = pc_acid
+					NOT = { has_modifier = "pdacid" }
+				}
+				add_modifier = { modifier = "pdacid" days = -1 }
+			}
+			#Ash
+			if = {
+				limit = {
+					is_planet_class = pc_ash
+					NOT = { has_modifier = "ash" }
+				}
+				add_modifier = { modifier = "ash" days = -1 }
+			}
+			#Biolumen
+			if = {
+				limit = {
+					is_planet_class = pc_biolumen
+					NOT = { has_modifier = "biolumen" }
+				}
+				add_modifier = { modifier = "biolumen" days = -1 }
+			}
+			#Superhabitable
+			if = {
+				limit = {
+					is_planet_class = pc_superhabitable
+					NOT = { has_modifier = "superhabitable" }
+				}
+				change_planet_size = +9
+				add_modifier = { modifier = "superhabitable" days = -1 }
+			}
+			#Geothermal
+			if = {
+				limit = {
+					is_planet_class = pc_geothermal
+					NOT = { has_modifier = "geothermal" }
+				}
+				add_modifier = { modifier = "geothermal" days = -1 }
+			}
+			#Tidally Locked
+			if = {
+				limit = {
+					is_planet_class = pc_tidallylocked
+					NOT = { has_modifier = "tidal_locked2" }
+				}
+				add_modifier = { modifier = "tidal_locked2" days = -1 }
+			}
+			#Supercontinent
+			if = {
+				limit = {
+					is_planet_class = pc_supercon
+					NOT = { has_modifier = "supercon" }
+				}
+				add_modifier = { modifier = "supercon" days = -1 }
+			}
+			#Irradiated
+			if = {
+				limit = {
+					is_planet_class = pc_irradiated
+					NOT = { has_modifier = "radiotrophic" }
+				}
+				add_modifier = { modifier = "radiotrophic" days = -1 }
+			}
+			#Karst
+			if = {
+				limit = {
+					is_planet_class = pc_karst
+					NOT = { has_modifier = "karst" }
+				}
+				add_modifier = { modifier = "karst" days = -1 }
+			}
+			#Reef
+			if = {
+				limit = {
+					is_planet_class = pc_reef
+					NOT = { has_modifier = "pdreef" }
+				}
+				add_modifier = { modifier = "pdreef" days = -1 }
+			}
+			#Primal
+			if = {
+				limit = {
+					is_planet_class = pc_primal
+					NOT = { has_modifier = "primal" }
+				}
+				add_modifier = { modifier = "primal" days = -1 }
+			}
+			#Salt
+			if = {
+				limit = {
+					is_planet_class = pc_salt
+					NOT = { has_modifier = "pdsalt" }
+				}
+				add_modifier = { modifier = "pdsalt" days = -1 }
+			}
+			#Aquifer
+			if = {
+				limit = {
+					is_planet_class = pc_aquifer
+					NOT = { has_modifier = "pdaquifer" }
+				}
+				add_modifier = { modifier = "pdaquifer" days = -1 }
+			}
+			#Coral
+			if = {
+				limit = {
+					is_planet_class = pc_coral
+					NOT = { has_modifier = "pdcoral" }
+				}
+				add_modifier = { modifier = "pdcoral" days = -1 }
+			}
+			#Storm
+			if = {
+				limit = {
+					is_planet_class = pc_storm
+					NOT = { has_modifier = "pdstorm" }
+				}
+				add_modifier = { modifier = "pdstorm" days = -1 }
+				set_planet_flag = pdnoseamonster
+			}
+			#Rogue
+			if = {
+				limit = {
+					is_planet_class = pc_rogue
+					NOT = { has_modifier = "pdrogue" }
+				}
+				add_modifier = { modifier = "pdrogue" days = -1 }
+			}
+			#Lichen
+			if = {
+				limit = {
+					is_planet_class = pc_lichen
+					NOT = { has_modifier = "pdlichen" }
+				}
+				add_modifier = { modifier = "pdlichen" days = -1 }
+			}
+			#Eyeball
+			if = {
+				limit = {
+					is_planet_class = pc_eyeball
+					NOT = { has_modifier = "pdeyeball" }
+				}
+				add_modifier = { modifier = "pdeyeball" days = -1 }
+			}
+			#Glaciovolcanic
+			if = {
+				limit = {
+					is_planet_class = pc_glacio
+					NOT = { has_modifier = "pdglacio" }
+				}
+				add_modifier = { modifier = "pdglacio" days = -1 }
+			}
+			#Lanthanide
+			if = {
+				limit = {
+					is_planet_class = pc_lanthanide
+					NOT = { has_modifier = "pdlanthanide" }
+				}
+				add_modifier = { modifier = "pdlanthanide" days = -1 }
+			}
+			#Megaflora
+			if = {
+				limit = {
+					is_planet_class = pc_megaflora
+					NOT = { has_modifier = "pdmegaflora" }
+				}
+				add_modifier = { modifier = "pdmegaflora" days = -1 }
+			}
+		}
+	}
+}

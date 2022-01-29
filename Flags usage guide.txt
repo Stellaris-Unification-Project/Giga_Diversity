@@ -1,0 +1,68 @@
+#Global Flags 
+
+#This is the global flag for Giga Diversity
+#gigadiversity
+
+
+#Flags that can be checked from other mods
+
+#global flags
+#set_global_flag
+#has_global_flag
+#remove_global_flag
+#How to use
+#potential = {
+#	has_global_flag = 
+#}
+
+
+#Planetary Diversity
+#planetarydiversity
+
+#Planetary Diversity Planetary Habitats
+#planetarydiversityhabitats
+
+#TODO Either Split off seperate mods so for Exotic, Unique, and Shroud Mods or find something unique to each mod that can be used to set a global flag
+#Complete...
+#each Exotic world has a 100% chance of spawning. A scan of the galaxy after PD makes changes to the planets that checks for any exotic planet.
+#All unique worlds have 100% chance of spawning. Like with exotic planets check after spawn and set the global flag.
+#At least one PD Shrouded World is spawned at galaxy start, and up to 4 depending on the galaxy size. Check is preformed like the other checks
+#There is always an abandonded EcoArc in the galaxy according the spawn chance it is 100%. Check is done like the other checks above
+#the new flags are lised below
+
+#planetarydiversityexotics
+#planetarydiversityuniques
+#planetarydiversityshroud
+#planetarydiversityarcs
+
+#planet flags
+#set_planet_flag
+#has_planet_flag
+#remove_planet_flag
+#set_planet_flag = planetaryhabitatimpossible
+#set_planet_flag = planetaryterraformimpossible
+#How to use
+#potential = {
+#					has_planet_flag = planetaryhabitatimpossible
+#}
+
+#Flag that will be used to disable planetary habitats from built on a planet due to certain megastructures
+#planetaryhabitatimpossible
+
+#Flag that marks a world as one that used to be a hothouse world
+#used_to_be_hothouse
+
+#Flag that marks that terraform is impossible by even the most extrodinary means
+#planetaryterraformimpossible
+
+#Giga Planets
+#
+
+#For restoring AIs ability to colonize a planetary habitat uses AI habitat mod
+#set_global_flag = habitataifix_installed
+
+#For checking if ACOT is installed
+#acot_activated
+
+#Checking if Aquisition of Technologies mod is installed
+#has_aot_mod

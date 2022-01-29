@@ -1,0 +1,13 @@
+# Add new ringworlds that match with new Arcologies, Hives and Machine worlds added by More Arcologies.
+	#need to work out all of the types of districs involved
+# Create more integration between GPM's modifiers and the PD worlds.
+# Add lifeless versions of the Exotic World types except Acid and Irradiated.
+# Exotic Flat world? Flat world Arcologies, Hives, Machine worlds?
+# Special assencion perk to become TechnoOrganic? Machine empires might be able to transition into a technohive? Might only be unlockable by discovering the TechnoOrganic Unique world and finding a tech from an Archilogical Dig. Rogue Serv, DetEx, and DrivenAssym really would not make sense assending to TechnoHive Unless there is a Hive Mind Equivalent to their current civics.
+	#Normal Organics and Hives would just be able to become TechnoOrganic. Machine
+	#Techno Hive could have some unique traits that can only be unlocked and used once the species changes over.
+# Look into interesting things to do with with Aquatic. Can we have Aquatic ringworlds? Aquatic Lifeless world?
+# Reveiw all terraforming connections
+# Planetary Habitats: review converstion modifiers. Should special planetary features be added to worlds that are being converted. Temporary added districts? Are the conversions to Lifeless worlds messing up the districts?
+#Reveiw exotic origins: Find better ways to impliment that don't require overwriting vanilla and giga files.
+#Art asset aquision. 

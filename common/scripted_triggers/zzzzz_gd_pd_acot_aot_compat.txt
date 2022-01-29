@@ -1,0 +1,270 @@
+#this is to increase the compatiblity with the has_upgraded_capital from PD, ACOT, and AOT
+#PD:01_scripted_triggers_buildings.txt
+#ACOT: acot_scripted_triggers_buildings.txt
+#AOT: z_aot_scripted_triggers_buildings.txt
+
+has_upgraded_capital = {
+	if = {
+		limit = { has_modifier = resort_colony }
+		custom_tooltip = {
+			fail_text = "requires_building_resort_capital"
+			OR = {
+				has_building = building_resort_capital
+				has_building = building_resort_major_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+			}
+		}
+	}
+	else_if = {
+		limit = { has_modifier = slave_colony }
+		custom_tooltip = {
+			fail_text = "requires_building_slave_capital"
+			OR = {
+				has_building = building_slave_capital
+				has_building = building_slave_major_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				is_planet_class = pc_habitat 
+				is_planet_class = pc_pd_barren_cold_hab
+				is_planet_class = pc_pd_barren_hab
+				is_planet_class = pc_pd_frozen_hab
+				is_planet_class = pc_pd_gas_giant_hab
+				is_planet_class = pc_pd_hothouse_hab
+				is_planet_class = pc_pd_toxic_hab
+				is_planet_class = pc_pd_molten_hab
+				is_planet_class = pc_pd_asteroid_hab
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_building_hab_capital"
+			OR = {
+				has_building = building_hab_capital
+				has_building = building_hab_major_capital
+				has_building = building_imperial_capital
+				has_building = building_imperial_machine_capital
+				has_building = building_imperial_hive_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_dm_ancient_hive_cluster
+				has_building = building_ae_ancient_hive_cluster
+				has_building = building_dm_ancient_control_center 
+				has_building = building_ae_ancient_control_center				
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+				has_building = building_stellarite_control_center
+				has_building = building_phanon_control_center
+				has_building = building_stellarite_hive_cluster
+				has_building = building_phanon_hive_cluster
+			}
+		}
+	}
+	else_if = {
+		limit = { owner = { is_hive_empire = yes } }
+		custom_tooltip = {
+			fail_text = "requires_building_hive_capital"
+			OR = {
+				has_building = building_hive_capital
+				has_building = building_hive_major_capital
+				has_building = building_imperial_hive_capital
+				has_building = building_dm_ancient_hive_cluster
+				has_building = building_ae_ancient_hive_cluster
+				has_building = building_heaven_sanctuary
+				has_building = building_phanon_tower
+				has_building = building_stellarite_hive_cluster
+				has_building = building_phanon_hive_cluster
+			}
+		}
+	}
+	else_if = {
+		limit = { owner = { is_machine_empire = yes } }
+		custom_tooltip = {
+			fail_text = "requires_building_machine_capital"
+			OR = {
+				has_building = building_machine_capital
+				has_building = building_machine_major_capital
+				has_building = building_machine_system_capital
+				has_building = building_imperial_machine_capital
+				has_building = building_dm_ancient_control_center	
+				has_building = building_ae_ancient_control_center	
+				has_building = building_heaven_sanctuary
+				has_building = building_eternal_nexus_ai
+				has_building = building_ancient_control_center
+				has_building = building_phanon_tower
+				has_building = building_stellarite_control_center
+				has_building = building_phanon_control_center
+			}
+		}
+	}
+	else = {
+		custom_tooltip = {
+			fail_text = "requires_building_capital"
+			OR = {
+				has_building = building_capital
+				has_building = building_major_capital
+				has_building = building_system_capital
+				has_building = building_imperial_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+			}
+		}
+	}
+}
+
+has_major_upgraded_capital = {
+	if = {
+		limit = { has_modifier = resort_colony }
+		custom_tooltip = {
+			fail_text = "requires_building_resort_major_capital"
+			OR = {
+				has_building = building_resort_major_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+			}
+		}
+	}
+	else_if = {
+		limit = { has_modifier = slave_colony }
+		custom_tooltip = {
+			fail_text = "requires_building_slave_major_capital"
+			OR = {
+				has_building = building_slave_major_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				is_planet_class = pc_habitat 
+				is_planet_class = pc_pd_barren_cold_hab
+				is_planet_class = pc_pd_barren_hab
+				is_planet_class = pc_pd_frozen_hab
+				is_planet_class = pc_pd_gas_giant_hab
+				is_planet_class = pc_pd_hothouse_hab
+				is_planet_class = pc_pd_toxic_hab
+				is_planet_class = pc_pd_molten_hab
+				is_planet_class = pc_pd_asteroid_hab
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_building_hab_major_capital"
+			OR = {
+				has_building = building_hab_major_capital
+				has_building = building_imperial_capital
+				has_building = building_imperial_machine_capital
+				has_building = building_imperial_hive_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_dm_ancient_hive_cluster
+				has_building = building_ae_ancient_hive_cluster
+				has_building = building_dm_ancient_control_center 
+				has_building = building_ae_ancient_control_center				
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+				has_building = building_stellarite_control_center
+				has_building = building_phanon_control_center
+				has_building = building_stellarite_hive_cluster
+				has_building = building_phanon_hive_cluster
+			}
+		}
+	}
+	else_if = {
+		limit = { owner = { is_hive_empire = yes } }
+		custom_tooltip = {
+			fail_text = "requires_building_major_hive_capital"
+			OR = {
+				has_building = building_hive_major_capital
+				has_building = building_imperial_hive_capital
+				has_building = building_dm_ancient_hive_cluster
+				has_building = building_ae_ancient_hive_cluster
+				has_building = building_heaven_sanctuary
+				has_building = building_phanon_tower
+				has_building = building_stellarite_hive_cluster
+				has_building = building_phanon_hive_cluster
+			}
+		}
+	}
+	else_if = {
+		limit = { owner = { is_machine_empire = yes } }
+		custom_tooltip = {
+			fail_text = "requires_building_machine_major_capital"
+			OR = {
+				has_building = building_machine_major_capital
+				has_building = building_machine_system_capital
+				has_building = building_imperial_machine_capital
+				has_building = building_dm_ancient_control_center	
+				has_building = building_ae_ancient_control_center	
+				has_building = building_heaven_sanctuary
+				has_building = building_eternal_nexus_ai
+				has_building = building_ancient_control_center
+				has_building = building_phanon_tower
+				has_building = building_stellarite_control_center
+				has_building = building_phanon_control_center
+			}
+		}
+	}
+	else = {
+		custom_tooltip = {
+			fail_text = "requires_building_major_capital"
+			OR = {
+				has_building = building_major_capital
+				has_building = building_system_capital
+				has_building = building_imperial_capital
+				has_building = building_dm_ancient_palace
+				has_building = building_ae_ancient_palace
+				has_building = building_heaven_sanctuary
+				has_building = building_ancient_palace
+				has_building = building_eternal_palace
+				has_building = building_phanon_tower
+				has_building = building_stellarite_palace
+				has_building = building_phanon_palace
+			}
+		}
+	}
+}

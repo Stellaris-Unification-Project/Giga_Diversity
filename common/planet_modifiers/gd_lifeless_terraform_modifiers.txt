@@ -1,0 +1,10 @@
+pm_lifeless_foggy_terraform = {				spawn_chance = {} modifier = "lifeless_foggy_terraform" }
+pm_lifeless_temperate_terraform = {			spawn_chance = {} modifier = "lifeless_temperate_terraform" }
+pm_lifeless_torrid_terraform = {				spawn_chance = {} modifier = "lifeless_torrid_terraform" }
+pm_lifeless_methane_terraform =  {				spawn_chance = {} modifier = "lifeless_methane_terraform" }
+pm_lifeless_ammonia_terraform =  {				spawn_chance = {} modifier = "lifeless_ammonia_terraform" }
+pm_lifeless_ash_terraform =  {				spawn_chance = {} modifier = "lifeless_ash_terraform" }
+pm_lifeless_sulfur_terraform =  {				spawn_chance = {} modifier = "lifeless_sulfur_terraform" }
+pm_lifeless_ocean_terraform =  {				spawn_chance = {} modifier = "lifeless_ocean_terraform" }
+pm_lifeless_rogue_terraform =  {				spawn_chance = {} modifier = "lifeless_rogue_terraform" }
+pm_habitable_gas_giant_terraform =  {				spawn_chance = {} modifier = "habitable_gas_giant_terraform" }

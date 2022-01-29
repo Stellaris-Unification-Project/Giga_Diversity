@@ -1,0 +1,504 @@
+namespace = pdexotic
+
+country_event = {
+    id = pdexotic.01
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+	has_global_flag = planetarydiversityexotics
+        owner = { has_trait = trait_pc_ammonia_preference }
+    }
+    immediate = {
+        every_planet_within_border = {
+			IF = {
+				limit = { 
+					OR = {
+					is_planet_class = pc_habitat 
+					is_planet_class = pc_pd_barren_hab
+					is_planet_class = pc_pd_barren_cold_hab
+					is_planet_class = pc_pd_frozen_hab
+					is_planet_class = pc_pd_molten_hab
+					is_planet_class = pc_pd_hothouse_hab
+					is_planet_class = pc_pd_toxic_hab
+					is_planet_class = pc_pd_gas_giant_hab
+					is_planet_class = pc_pd_asteroid_hab
+					#Giga
+					is_planet_class = pc_equatorial_shipyard
+					is_planet_class = pc_giga_penrose_habitable
+					is_planet_class = pc_gigaorbital_ring
+					is_planet_class = pc_interstellar_habitat
+					is_planet_class = pc_interstellar_ringworld_habitable
+					is_planet_class = pc_giga_planetary_computer
+					is_planet_class = pc_habitable_gas_giant
+					is_planet_class = pc_ehof_habitat
+					}
+					NOT = { has_modifier = pdammoniaatmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ammoniahab }
+				#set_planet_entity = { entity = "habitat_phase_01_entity" graphical_culture = from }
+			}
+			#Regular Ringworld
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdammoniaatmosphere } 
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				set_planet_entity = { picture = pc_ammoniaring entity = ammoniaring_habitable_entity_01_entity }
+			}
+			#Titanic, Behemuth Gargantuan,
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdammoniaatmosphere } 
+					OR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ammoniaring entity = ammoniaring_habitable_entity_01_entity }
+			}
+			#Giga Hive
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_hive" 
+					NOT = { has_modifier = pdammoniaatmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ammoniaring entity = ammoniaring_habitable_entity_01_entity }
+			}
+			#Giga City
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_city" 
+					NOT = { has_modifier = pdammoniaatmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ammoniaring entity = ammoniaring_habitable_entity_01_entity }
+			}
+			#Giga Squareworld
+			IF = {
+				limit = {
+					is_planet_class = "pc_squareworld_habitable" 
+					NOT = { has_modifier = pdammoniaatmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdammoniaatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ammoniaring entity = ammoniaring_habitable_entity_01_entity }
+			}
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_seam
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_seam_entity_01_entity }
+           		}
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_tech
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_tech_entity_01_entity }
+            		}
+        }
+    }
+}
+
+country_event = {
+    id = pdexotic.02
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+	has_global_flag = planetarydiversityexotics
+        owner = { has_trait = trait_pc_methane_preference }
+    }
+    immediate = {
+        every_planet_within_border = {
+			IF = {
+				limit = { 
+					OR = {
+					is_planet_class = pc_habitat 
+					is_planet_class = pc_pd_barren_hab
+					is_planet_class = pc_pd_barren_cold_hab
+					is_planet_class = pc_pd_frozen_hab
+					is_planet_class = pc_pd_molten_hab
+					is_planet_class = pc_pd_hothouse_hab
+					is_planet_class = pc_pd_toxic_hab
+					is_planet_class = pc_pd_gas_giant_hab
+					is_planet_class = pc_pd_asteroid_hab
+					#Giga
+					is_planet_class = pc_equatorial_shipyard
+					is_planet_class = pc_giga_penrose_habitable
+					is_planet_class = pc_gigaorbital_ring
+					is_planet_class = pc_interstellar_habitat
+					is_planet_class = pc_interstellar_ringworld_habitable
+					is_planet_class = pc_giga_planetary_computer
+					is_planet_class = pc_habitable_gas_giant
+					is_planet_class = pc_ehof_habitat
+					}
+					NOT = { has_modifier = pdmethaneatmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_methanehab }
+				#set_planet_entity = { entity = "habitat_phase_01_entity" graphical_culture = from }
+			}
+			#Regular Ringworld
+			IF = {
+				limit = { 
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdmethaneatmosphere }
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				set_planet_entity = { picture = pc_methanering entity = methanering_habitable_entity_01_entity }
+			}
+			#Titanic, Behemuth Gargantuan
+			IF = {
+				limit = { 
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdmethaneatmosphere }
+					OR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_methanering entity = methanering_habitable_entity_01_entity }
+			}
+			#Giga Hive
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_hive" 
+					NOT = { has_modifier = pdmethaneatmosphere }
+					is_colony = no
+				}
+				add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_methanering entity = methanering_habitable_entity_01_entity }
+			}
+			#Giga City
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_city" 
+					NOT = { has_modifier = pdmethaneatmosphere }
+					is_colony = no
+				}
+				add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_methanering entity = methanering_habitable_entity_01_entity }
+			}
+			#Giga Squareworld
+			IF = {
+				limit = {
+					is_planet_class = "pc_squareworld_habitable" 
+					NOT = { has_modifier = pdmethaneatmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdmethaneatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_methanering entity = methanering_habitable_entity_01_entity }
+			}
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_seam
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_seam_entity_01_entity }
+            }
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_tech
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_tech_entity_01_entity }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = pdexotic.03
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+	has_global_flag = planetarydiversityexotics
+        owner = { has_trait = trait_pc_ash_preference }
+    }
+    immediate = {
+        every_planet_within_border = {
+			IF = {
+				limit = { 
+					OR = {
+					is_planet_class = pc_habitat 
+					is_planet_class = pc_pd_barren_hab
+					is_planet_class = pc_pd_barren_cold_hab
+					is_planet_class = pc_pd_frozen_hab
+					is_planet_class = pc_pd_molten_hab
+					is_planet_class = pc_pd_hothouse_hab
+					is_planet_class = pc_pd_toxic_hab
+					is_planet_class = pc_pd_gas_giant_hab
+					is_planet_class = pc_pd_asteroid_hab
+					#Giga
+					is_planet_class = pc_equatorial_shipyard
+					is_planet_class = pc_giga_penrose_habitable
+					is_planet_class = pc_gigaorbital_ring
+					is_planet_class = pc_interstellar_habitat
+					is_planet_class = pc_interstellar_ringworld_habitable
+					is_planet_class = pc_giga_planetary_computer
+					is_planet_class = pc_habitable_gas_giant
+					is_planet_class = pc_ehof_habitat
+					}
+					NOT = { has_modifier = pdashatmosphere }
+					is_colony = no
+				}
+				add_modifier = { modifier = pdashatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ashhab }
+				#set_planet_entity = { entity = "habitat_phase_01_entity" graphical_culture = from }
+			}
+			#Regular Ringworld
+			IF = {
+				limit = { 
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdashatmosphere }
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdashatmosphere days = -1 }
+				set_planet_entity = { picture = pc_ashring entity = ashring_habitable_entity_01_entity }
+			}
+			#Titanic, Behemuth Gargantuan
+			IF = {
+				limit = { 
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdashatmosphere }
+					OR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdashatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ashring entity = ashring_habitable_entity_01_entity }
+			}
+			#Giga Hive
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_hive" 
+					NOT = { has_modifier = pdashatmosphere }
+					is_colony = no
+				}
+				add_modifier = { modifier = pdashatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ashring entity = ashring_habitable_entity_01_entity }
+			}
+			#Giga City
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_city" 
+					NOT = { has_modifier = pdashatmosphere }
+					is_colony = no
+				}
+				add_modifier = { modifier = pdashatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ashring entity = ashring_habitable_entity_01_entity }
+			}
+			#Giga Squareworld
+			IF = {
+				limit = {
+					is_planet_class = "pc_squareworld_habitable" 
+					NOT = { has_modifier = pdashatmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdashatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ashring entity = ashring_habitable_entity_01_entity }
+			}
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_seam
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_seam_entity_01_entity }
+            }
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_tech
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_tech_entity_01_entity }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = pdexotic.04
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+	has_global_flag = planetarydiversityexotics
+        owner = { has_trait = trait_pc_sulfur_preference }
+    }
+    immediate = {
+        every_planet_within_border = {
+			IF = {
+				limit = { 
+					OR = {
+					is_planet_class = pc_habitat 
+					is_planet_class = pc_pd_barren_hab
+					is_planet_class = pc_pd_barren_cold_hab
+					is_planet_class = pc_pd_frozen_hab
+					is_planet_class = pc_pd_molten_hab
+					is_planet_class = pc_pd_hothouse_hab
+					is_planet_class = pc_pd_toxic_hab
+					is_planet_class = pc_pd_gas_giant_hab
+					is_planet_class = pc_pd_asteroid_hab
+					#Giga
+					is_planet_class = pc_equatorial_shipyard
+					is_planet_class = pc_giga_penrose_habitable
+					is_planet_class = pc_gigaorbital_ring
+					is_planet_class = pc_interstellar_habitat
+					is_planet_class = pc_interstellar_ringworld_habitable
+					is_planet_class = pc_giga_planetary_computer
+					is_planet_class = pc_habitable_gas_giant
+					is_planet_class = pc_ehof_habitat
+					}
+					NOT = { has_modifier = pdsulfuratmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				#set_planet_entity = { picture = pc_ashhab }
+				#set_planet_entity = { entity = "habitat_phase_01_entity" graphical_culture = from }
+			}
+			#Regular Ringworld
+			IF = {
+				limit = { 
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdsulfuratmosphere }
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				set_planet_entity = { picture = pc_sulfurring entity = sulfurring_habitable_entity_01_entity }
+			}
+			#Titanic, Behemuth Gargantuan
+			IF = {
+				limit = { 
+					is_planet_class = "pc_ringworld_habitable" 
+					NOT = { has_modifier = pdsulfuratmosphere }
+					OR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				#set_planet_entity = { picture = pc_sulfurring entity = sulfurring_habitable_entity_01_entity }
+			}
+			#Giga Hive
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_hive" 
+					NOT = { has_modifier = pdsulfuratmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				#set_planet_entity = { picture = pc_sulfurring entity = sulfurring_habitable_entity_01_entity }
+			}
+			#Giga City
+			IF = {
+				limit = {
+					is_planet_class = "pc_ringworld_city" 
+					NOT = { has_modifier = pdsulfuratmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdsulfuratmosphere days = -1 }
+				#set_planet_entity = { picture = pc_sulfurring entity = sulfurring_habitable_entity_01_entity }
+			}
+			#Giga Squareworld
+			IF = {
+				limit = {
+					is_planet_class = "pc_squareworld_habitable" 
+					NOT = { has_modifier = pdsulfuratmosphere }
+					is_colony = no
+				}	
+				add_modifier = { modifier = pdashatmosphere days = -1 }
+				#set_planet_entity = { picture = pc_sulfurring entity = sulfurring_habitable_entity_01_entity }
+			}
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_seam
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_seam_entity_01_entity }
+            }
+			IF = {
+				limit = { 
+					is_planet_class = pc_ringworld_tech
+					NOR = {
+						has_planet_flag = giga_ringworld_tit
+						has_planet_flag = giga_ringworld_beh
+						has_planet_flag = giga_ringworld_gar
+					}
+				}	
+				set_planet_entity = { entity = ringworld_tech_entity_01_entity }
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,59 @@
+lifeless_foggy_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_torrid_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_arid_planet.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_temperate_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_methane_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_methane.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_ammonia_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_ammonia.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_ash_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_ash.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_sulfur_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_sulfur.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_ocean_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_aquatic.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+lifeless_rogue_terrafrom = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_pdrogue.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}
+
+habitable_gas_giant_terraform = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_helioforming_candidate.dds"
+	icon_frame = 1
+	important = yes			# if present on a planet, show the planet's nameplate
+}

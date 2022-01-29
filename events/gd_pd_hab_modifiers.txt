@@ -1,0 +1,129 @@
+
+
+namespace = gdpdhabmodifiers
+
+planet_event = {
+	id = gdpdhabmodifiers.00
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_global_flag = planetarydiversityhabitats }
+	#Planets get underground cave
+
+	immediate = {
+		planet = {
+			if = { limit = { not = { has_planet_flag = pdhabitatmodifierchecked } }
+				set_planet_flag = pdhabitatmodifierchecked
+				if = {
+					limit = {
+						has_global_flag = planetarydiversityhabitats
+						OR = {
+							is_planet_class = pc_barren
+							is_planet_class = pc_barren_cold
+							is_planet_class = pc_carbon
+							is_planet_class = pc_diamond
+						}
+						not = { has_modifier = pdhabcavesystem }	
+						planet_size > 9
+						planet_size < 26	
+						solar_system = {
+							NOR = {
+								is_star_class = sc_black_hole
+								is_star_class = sc_neutron_star
+								is_star_class = sc_pulsar
+							}
+						}
+					}	
+					random_list = {
+						30 = {
+							add_modifier = { modifier = pdhabcavesystem days = -1	}
+						}
+						70 = { }
+					}
+				}
+				if = { 
+					limit = {
+						has_global_flag = planetarydiversityhabitats
+						OR = {
+							is_planet_class = pc_gas_giant
+							is_planet_class = pc_cold_gas_giant
+							is_planet_class = pc_hothouse
+							is_planet_class = pc_toxic
+						}
+						not = { has_modifier = pdhabcalmwinds }	
+						planet_size > 9
+						planet_size < 26	
+						solar_system = {
+							NOR = {
+								is_star_class = sc_black_hole
+								is_star_class = sc_neutron_star
+								is_star_class = sc_pulsar
+							}
+						}
+					}	
+					random_list = {
+						30 = { 
+							add_modifier = { modifier = pdhabcalmwinds days = -1	} 
+						}
+						70 = { }	
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = planetarydiversityhabitats
+						OR = {
+							is_planet_class = pc_frozen
+							is_planet_class = pc_hydrocarbon
+							is_planet_class = pc_subglacial
+						}
+						not = { has_modifier = pdhabsubglacialocean }	
+						not = { has_modifier = pdterra_geothermal }
+						not = { has_modifier = pdterra_aquatic }
+						planet_size > 9
+						planet_size < 26
+						is_moon = yes	
+						solar_system = {
+							NOR = {
+								is_star_class = sc_black_hole
+								is_star_class = sc_neutron_star
+								is_star_class = sc_pulsar
+							}
+						}
+					}	
+					random_list = {
+						30 = { 
+							add_modifier = { modifier = pdhabsubglacialocean days = -1	} 
+					}
+						70 = { }	
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = planetarydiversityhabitats 
+						OR = {
+							is_planet_class = pc_molten
+							is_planet_class = pc_volcanic
+						}
+						not = { has_modifier = pdhabvolcanicminerals }	
+						planet_size > 9
+						planet_size < 26	
+						solar_system = {
+							NOR = {
+								is_star_class = sc_black_hole
+								is_star_class = sc_neutron_star
+								is_star_class = sc_pulsar
+							}
+						}
+					}	
+					random_list = {
+						30 = { 
+							add_modifier = { modifier = pdhabvolcanicminerals days = -1	} 
+						}
+						70 = { }	
+					}
+				}
+			}
+		}
+	}
+}
+

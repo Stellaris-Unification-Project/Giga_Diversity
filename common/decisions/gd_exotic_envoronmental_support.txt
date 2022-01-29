@@ -1,0 +1,5 @@
+#This section will be used to support creating environmental zones on other planets designed to support exotic atmosphere support
+
+#The supported envornments will be Methane, Ash, Sulfur, Ammonia, Aquatic
+
+#Also there will be the option to create classic environmental zones within exotic base worlds

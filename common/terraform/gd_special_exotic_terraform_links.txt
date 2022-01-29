@@ -1,0 +1,135 @@
+@terraforming_cost_level_1 = 2000 #<-- same category terraforming
+@terraforming_cost_level_2 = 5000 #<-- different category terraforming
+@terraforming_cost_level_3 = 10000 #<-- Hive and machine
+@terraforming_cost_level_4 = 15000 #<-- climate restoration
+@terraforming_cost_gaia = 7500
+@terraforming_duration_level_1 = 1800 #<-- same category terraforming
+@terraforming_duration_level_2 = 3600 #<-- different category terraforming
+@terraforming_duration_level_3 = 5400 #<-- opposite category terraforming and uninhabitable to inhabitable terraforming
+@terraforming_duration_level_4 = 7200 #<-- special terraforming, e.g. to gaia, machine world etc.
+@terraforming_duration_gaia = 3600
+@hiveCost = 10000
+@hiveTime = 7200
+
+#Hydrocarbon World
+terraform_link = {
+	from = pc_hydrocarbon
+	to = pc_methane
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_2 }
+	}
+	duration = @terraforming_duration_level_2
+	potential = {
+		has_global_flag = planetarydiversityexotics
+		from = {
+			has_modifier = terraforming_methane
+		}
+	}
+	condition = { has_technology = "tech_methane_terraform" }
+	effect = {
+		from = {
+			remove_modifier = terraforming_methane
+			remove_modifier = terraforming_ash
+			remove_modifier = terraforming_sulfur
+			remove_modifier = terraforming_ammonia
+			reroll_planet = yes
+		}
+	}
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			NOT = {
+				owner_species = { has_trait = trait_pc_methane_preference }
+			}
+		}
+	}
+}
+
+#Ethane Ocean
+terraform_link = {
+	from = pc_ethane_ocean
+	to = pc_methane
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_2 }
+	}
+	duration = @terraforming_duration_level_2
+	potential = {
+		has_global_flag = planetarydiversityexotics
+		from = {
+			has_modifier = terraforming_methane
+		}
+	}
+	condition = { has_technology = "tech_methane_terraform" }
+	effect = {
+		from = {
+			remove_modifier = terraforming_methane
+			remove_modifier = terraforming_ash
+			remove_modifier = terraforming_sulfur
+			remove_modifier = terraforming_ammonia
+			remove_modifier = giga_pd_ethane_planet
+			reroll_planet = yes
+		}
+	}
+	ai_weight = {
+		weight = 5
+		modifier = { factor = 0 NOT = { owner_species = { has_trait = trait_pc_methane_preference } } }
+	}
+}
+
+#Volcanic World
+terraform_link = {
+	from = pc_volcanic
+	to = pc_ash
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_2 }
+	}
+	duration = @terraforming_duration_level_2
+	potential = {
+		has_global_flag = planetarydiversityexotics
+		from = {has_modifier = terraforming_ash } }
+	condition = { has_technology = "tech_ash_terraform" }
+	effect = {
+		from = {
+			remove_modifier = terraforming_methane
+			remove_modifier = terraforming_ash
+			remove_modifier = terraforming_sulfur
+			remove_modifier = terraforming_ammonia
+			reroll_planet = yes
+		}
+	}
+	ai_weight = {
+		weight = 5
+		modifier = { factor = 0 NOT = { owner_species = { has_trait = trait_pc_ash_preference } } }
+	}
+}
+
+terraform_link = {
+	from = pc_volcanic
+	to = pc_sulfur
+	resources = {
+		category = terraforming
+		cost = { energy = @terraforming_cost_level_2 }
+	}
+	duration = @terraforming_duration_level_2
+	potential = {
+		has_global_flag = planetarydiversityexotics
+		from = { has_modifier = terraforming_sulfur } }
+	condition = { has_technology = "tech_sulfur_terraform" }
+	effect = {
+		from = { 
+			remove_modifier = terraforming_methane
+			remove_modifier = terraforming_ash
+			remove_modifier = terraforming_sulfur
+			remove_modifier = terraforming_ammonia
+			reroll_planet = yes
+		}
+	}
+	ai_weight = {
+		weight = 5
+		modifier = { factor = 0 NOT = { owner_species = { has_trait = trait_pc_sulfur_preference } } }
+	}
+}
