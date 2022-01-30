@@ -575,7 +575,7 @@ event = {
 
 	immediate = {
 		set_global_flag = birch_black_hole_occured
-		every_country = {
+		every_playable_country = {
 			limit = { is_ai = no }
 			country_event = { id = giga_mega.402 days = 10 random = 360 }
 		}
@@ -634,7 +634,7 @@ country_event = {
 		event_target:giga_core_system = {
 			if = {
 				limit = { has_global_flag = giga_core_aeternum } #Aeternum's perfect hexagon
-				every_country = {
+				every_playable_country = {
 					limit = { is_ai = no }
 					country_event = { id = giga_aeternum.2010 days = 30 }
 				}
@@ -798,7 +798,7 @@ planet_event = {
 
 			# Wipe out system
 			every_fleet_in_system = {
-				limit = { owner = { NOT = { is_immune_to_giga_hyperweapon = yes } } } 
+				limit = { owner = { is_immune_to_giga_hyperweapon = no } } 
 				destroy_fleet = this 
 			}
 			every_system_planet = { limit = { is_star = no } remove_planet = yes }
@@ -1270,10 +1270,8 @@ country_event = {
 			limit = {
 				NOT = {
 					any_country = {
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 						any_system_within_border = { is_same_value = prev }
 					}
 				}
@@ -1404,8 +1402,7 @@ country_event = {
 			limit = {
 				OR = {
 					is_country_type = default
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+					is_fallen_empire = yes
 				}
 				NOT = {
 					intel_level = {
@@ -2521,7 +2518,7 @@ event = {
 				value = event_target:global_event_country.giga_mega_output_ai_real
 			}
 			if = {
-				limit = { NOT = { check_variable = { which = giga_mega_output_ai_real value = 0 } } }
+				limit = { check_variable = { which = giga_mega_output_ai_real value != 0 } }
 				add_modifier = {
 					modifier = giga_mega_output_balance
 					days = -1
@@ -2534,7 +2531,7 @@ event = {
 				value = event_target:global_event_country.giga_mega_cost_ai_real
 			}
 			if = {
-				limit = { NOT = { check_variable = { which = giga_mega_cost_ai_real value = 0 } } }
+				limit = { check_variable = { which = giga_mega_cost_ai_real value != 0 } }
 				add_modifier = {
 					modifier = giga_mega_cost_balance
 					days = -1
@@ -2547,7 +2544,7 @@ event = {
 				value = event_target:global_event_country.giga_mega_upkeep_ai_real
 			}
 			if = {
-				limit = { NOT = { check_variable = { which = giga_mega_upkeep_ai_real value = 0 } } }
+				limit = { check_variable = { which = giga_mega_upkeep_ai_real value != 0 } }
 				add_modifier = {
 					modifier = giga_mega_upkeep_balance
 					days = -1
@@ -2556,7 +2553,7 @@ event = {
 			}
 		}
 
-		every_country = {
+		every_playable_country = {
 			limit = { is_ai = no }
 
 			set_variable = {
@@ -2564,7 +2561,7 @@ event = {
 				value = event_target:global_event_country.giga_mega_output_real
 			}
 			if = {
-				limit = { NOT = { check_variable = { which = giga_mega_output_real value = 0 } } }
+				limit = { check_variable = { which = giga_mega_output_real value != 0 } }
 				add_modifier = {
 					modifier = giga_mega_output_balance
 					days = -1
@@ -2577,7 +2574,7 @@ event = {
 				value = event_target:global_event_country.giga_mega_cost_real
 			}
 			if = {
-				limit = { NOT = { check_variable = { which = giga_mega_cost_real value = 0 } } }
+				limit = { check_variable = { which = giga_mega_cost_real value != 0 } }
 				add_modifier = {
 					modifier = giga_mega_cost_balance
 					days = -1
@@ -2590,7 +2587,7 @@ event = {
 				value = event_target:global_event_country.giga_mega_upkeep_real
 			}
 			if = {
-				limit = { NOT = { check_variable = { which = giga_mega_upkeep_real value = 0 } } }
+				limit = { check_variable = { which = giga_mega_upkeep_real value != 0 } }
 				add_modifier = {
 					modifier = giga_mega_upkeep_balance
 					days = -1

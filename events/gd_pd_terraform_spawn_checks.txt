@@ -7,13 +7,11 @@ event = {
 	immediate = {
 		every_galaxy_planet = {
 			limit = {  
-				NOT = {
-					OR = {
+				NOR = {
 						has_planet_flag = terraformmodifierchecked
 						has_planet_flag = exoticmodifierschecked
 						has_planet_flag = rareterraformmodifierchecked
-					}
-				}
+}
 			}
 			if = { limit = { NOT = { has_planet_flag = terraformmodifierchecked } }
 				planet = { planet_event = { id = gdterraformmodspawn.1 } }

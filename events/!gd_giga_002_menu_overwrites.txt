@@ -162,7 +162,7 @@ country_event = {
 						value = event_target:global_event_country.giga_mega_output_ai_real
 					}
 					if = {
-						limit = { NOT = { check_variable = { which = giga_mega_output_ai_real value = 0 } } }
+						limit = { check_variable = { which = giga_mega_output_ai_real value != 0 } }
 						add_modifier = {
 							modifier = giga_mega_output_balance
 							days = -1
@@ -174,7 +174,7 @@ country_event = {
 						value = event_target:global_event_country.giga_mega_cost_ai_real
 					}
 					if = {
-						limit = { NOT = { check_variable = { which = giga_mega_cost_ai_real value = 0 } } }
+						limit = { check_variable = { which = giga_mega_cost_ai_real value != 0 } }
 						add_modifier = {
 							modifier = giga_mega_cost_balance
 							days = -1
@@ -187,7 +187,7 @@ country_event = {
 						value = event_target:global_event_country.giga_mega_upkeep_ai_real
 					}
 					if = {
-						limit = { NOT = { check_variable = { which = giga_mega_upkeep_ai_real value = 0 } } }
+						limit = { check_variable = { which = giga_mega_upkeep_ai_real value != 0 } }
 						add_modifier = {
 							modifier = giga_mega_upkeep_balance
 							days = -1
@@ -196,14 +196,14 @@ country_event = {
 					}
 				}
 
-				every_country = {
+				every_playable_country = {
 					limit = { is_ai = no }
 					set_variable = {
 						which = giga_mega_output_real
 						value = event_target:global_event_country.giga_mega_output_real
 					}
 					if = {
-						limit = { NOT = { check_variable = { which = giga_mega_output_real value = 0 } } }
+						limit = { check_variable = { which = giga_mega_output_real value != 0 } }
 						add_modifier = {
 							modifier = giga_mega_output_balance
 							days = -1
@@ -215,7 +215,7 @@ country_event = {
 						value = event_target:global_event_country.giga_mega_cost_real
 					}
 					if = {
-						limit = { NOT = { check_variable = { which = giga_mega_cost_real value = 0 } } }
+						limit = { check_variable = { which = giga_mega_cost_real value != 0 } }
 						add_modifier = {
 							modifier = giga_mega_cost_balance
 							days = -1
@@ -228,7 +228,7 @@ country_event = {
 						value = event_target:global_event_country.giga_mega_upkeep_real
 					}
 					if = {
-						limit = { NOT = { check_variable = { which = giga_mega_upkeep_real value = 0 } } }
+						limit = { check_variable = { which = giga_mega_upkeep_real value != 0 } }
 						add_modifier = {
 							modifier = giga_mega_upkeep_balance
 							days = -1
@@ -855,8 +855,7 @@ country_event = {
 						}
 						NOR = {
 							is_country_type = primitive
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
+							is_fallen_empire = yes
 						}
 						OR = {
 							is_ai = no

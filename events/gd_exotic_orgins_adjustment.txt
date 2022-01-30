@@ -11,8 +11,8 @@ country_event = {
 	immediate = {
 		if {
 			limit = {
-				NOT = { has_authority = auth_machine_intelligence }
 				NOR = {
+					has_authority = auth_machine_intelligence
 					has_trait = trait_pc_methane_preference
 					has_trait = trait_pc_ammonia_preference
 					has_trait = trait_pc_ash_preference
@@ -41,8 +41,8 @@ country_event = {
 	immediate = {
 		if {
 			limit = {
-				NOT = { has_authority = auth_machine_intelligence }
 				NOR = {
+					has_authority = auth_machine_intelligence
 					has_trait = trait_pc_methane_preference
 					has_trait = trait_pc_ammonia_preference
 					has_trait = trait_pc_ash_preference
@@ -70,8 +70,8 @@ country_event = {
 	immediate = {
 		if {
 			limit = {
-				NOT = { has_authority = auth_machine_intelligence }
 				NOR = {
+					has_authority = auth_machine_intelligence
 					has_trait = trait_pc_methane_preference
 					has_trait = trait_pc_ammonia_preference
 					has_trait = trait_pc_ash_preference
@@ -98,8 +98,8 @@ country_event = {
 	immediate = {
 		if {
 			limit = {
-				NOT = { has_authority = auth_machine_intelligence }
 				NOR = {
+					has_authority = auth_machine_intelligence
 					has_trait = trait_pc_methane_preference
 					has_trait = trait_pc_ammonia_preference
 					has_trait = trait_pc_ash_preference

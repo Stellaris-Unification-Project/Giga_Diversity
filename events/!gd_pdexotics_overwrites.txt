@@ -43,8 +43,8 @@ country_event = {
 			IF = {
 				limit = {
 					is_planet_class = "pc_ringworld_habitable" 
-					NOT = { has_modifier = pdammoniaatmosphere } 
 					NOR = {
+						has_modifier = pdammoniaatmosphere
 						has_planet_flag = giga_ringworld_tit
 						has_planet_flag = giga_ringworld_beh
 						has_planet_flag = giga_ringworld_gar
@@ -168,8 +168,8 @@ country_event = {
 			IF = {
 				limit = { 
 					is_planet_class = "pc_ringworld_habitable" 
-					NOT = { has_modifier = pdmethaneatmosphere }
 					NOR = {
+						has_modifier = pdmethaneatmosphere
 						has_planet_flag = giga_ringworld_tit
 						has_planet_flag = giga_ringworld_beh
 						has_planet_flag = giga_ringworld_gar
@@ -293,8 +293,8 @@ country_event = {
 			IF = {
 				limit = { 
 					is_planet_class = "pc_ringworld_habitable" 
-					NOT = { has_modifier = pdashatmosphere }
 					NOR = {
+						has_modifier = pdashatmosphere
 						has_planet_flag = giga_ringworld_tit
 						has_planet_flag = giga_ringworld_beh
 						has_planet_flag = giga_ringworld_gar
@@ -418,8 +418,8 @@ country_event = {
 			IF = {
 				limit = { 
 					is_planet_class = "pc_ringworld_habitable" 
-					NOT = { has_modifier = pdsulfuratmosphere }
 					NOR = {
+						has_modifier = pdsulfuratmosphere
 						has_planet_flag = giga_ringworld_tit
 						has_planet_flag = giga_ringworld_beh
 						has_planet_flag = giga_ringworld_gar

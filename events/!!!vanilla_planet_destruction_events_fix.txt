@@ -12,7 +12,7 @@ planet_event = {
 		if = {
 			limit = {
 				exists = owner
-				owner = { NOT = { is_same_value = from.owner } }
+				owner = { NOT = { is_same_empire = from.owner } }
 			}
 			from.owner = {
 				country_event = { id = planet_destruction.301 }
@@ -70,11 +70,10 @@ planet_event = {
 		if = {
 			limit = {
 				exists = owner
-				owner = { NOT = { is_same_value = from.owner } }
+				owner = { NOT = { is_same_empire = from.owner } }
 				OR = {
 					is_country_type = default
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+					is_fallen_empire = yes
 				}
 			}
 			# Generate threat
@@ -84,8 +83,8 @@ planet_event = {
 				limit = {
 					NOR = {
 						OR = {
-							 is_same_value = from.owner
-							is_same_value = root.owner
+							 is_same_empire = from.owner
+							is_same_empire = root.owner
 						}
 						AND = {
 							has_federation = yes
@@ -141,7 +140,7 @@ planet_event = {
 			every_country = {
 				limit = {
 					OR = {
-						NOT = { is_same_value = from.owner }
+						NOT = { is_same_empire = from.owner }
 					}
 					OR = {
 						has_communications = from.owner
@@ -161,7 +160,7 @@ planet_event = {
 			}
 			every_country = {
 				limit = {
-					NOT = { is_same_value = from.owner }
+					NOT = { is_same_empire = from.owner }
 					OR = {
 						has_communications = from.owner
 						has_communications = root.owner
@@ -252,8 +251,7 @@ planet_event = {
 		if = {
 			limit = {
 				OR = {
-					is_planet_class = pc_habitat
-					is_planet_class = pc_ringworld_habitable
+					is_artificial = yes
 					is_planet_class = pc_shattered_ring_habitable
 					#Added Giga structures
 					is_planet_class = pc_gigaorbital_ring
@@ -431,13 +429,11 @@ country_event = {
 		text = planet_destruction.301.nobots.desc
 		trigger = {
 			from = {
-				NOT = { 
-					OR = {
+				NOR = {
 						is_planet_class = pc_infested 
 						is_planet_class = pc_barren
 						is_planet_class = pc_barren_cold
-					}
-				}
+}
 				count_owned_pop = {
 					count < 1
 				}
@@ -520,7 +516,7 @@ planet_event = {
 			limit = {
 				NOT = { is_planet_class = pc_ai }
 				exists = owner
-				owner = { NOT = { is_same_value = from.owner } }
+				owner = { NOT = { is_same_empire = from.owner } }
 			}
 			from.owner = {
 				country_event = { id = planet_destruction.401 }
@@ -597,11 +593,10 @@ planet_event = {
 				NOT = { is_planet_class = pc_ai }
 				exists = owner
 				owner = {
-					NOT = { is_same_value = from.owner }
+					NOT = { is_same_empire = from.owner }
 					OR = {
 						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_fallen_empire = yes
 					}
 				}
 			}
@@ -612,8 +607,8 @@ planet_event = {
 				limit = {
 					NOR = {
 						AND = {
-							is_same_value = from.owner
-							is_same_value = root.owner
+							is_same_empire = from.owner
+							is_same_empire = root.owner
 						}
 						AND = {
 							has_federation = yes
@@ -751,8 +746,7 @@ planet_event = {
 		if = {
 			limit = {
 				OR = {
-					is_planet_class = pc_habitat
-					is_planet_class = pc_ringworld_habitable
+					is_artificial = yes
 					is_planet_class = pc_shattered_ring_habitable
 					#Added Giga structures
 					is_planet_class = pc_gigaorbital_ring
@@ -919,7 +913,7 @@ planet_event = {
 		if = {
 			limit = {
 				exists = owner
-				owner = { is_same_value = from.owner }
+				is_owned_by = from.owner
 			}
 			add_modifier = {
 				modifier = uneasy_faith
@@ -982,11 +976,10 @@ planet_event = {
 			limit = {
 				exists = owner
 				owner = {
-					NOT = { is_same_value = from.owner }
+					NOT = { is_same_empire = from.owner }
 					OR = {
 						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_fallen_empire = yes
 					}
 				}
 			}
@@ -996,8 +989,8 @@ planet_event = {
 			every_country = {
 				limit = {
 					NOR = {
-						is_same_value = from.owner
-						is_same_value = root.owner
+						is_same_empire = from.owner
+						is_same_empire = root.owner
 						AND = {
 							has_federation = yes
 							is_in_federation_with = from.owner
@@ -1050,7 +1043,7 @@ planet_event = {
 			# modifier for allies + those upset by genocide
 			every_country = {
 				limit = {
-					NOR = { is_same_value = from.owner }
+					NOR = { is_same_empire = from.owner }
 					OR = {
 						has_communications = from.owner
 						has_communications = root.owner
@@ -1069,7 +1062,7 @@ planet_event = {
 			}
 			every_country = {
 				limit = {
-					NOR = { is_same_value = from.owner }
+					NOR = { is_same_empire = from.owner }
 					OR = {
 						has_communications = from.owner
 						has_communications = root.owner
@@ -1104,7 +1097,7 @@ planet_event = {
 				if = {
 			limit = {
 				exists = owner
-				owner = { is_same_value = from.owner }
+				is_owned_by = from.owner
 			}
 			# already owned
 		}
@@ -1187,8 +1180,7 @@ planet_event = {
 		if = {
 			limit = {
 				OR = {
-					is_planet_class = pc_habitat
-					is_planet_class = pc_ringworld_habitable
+					is_artificial = yes
 					is_planet_class = pc_shattered_ring_habitable
 					#Added Giga structures
 					is_planet_class = pc_gigaorbital_ring

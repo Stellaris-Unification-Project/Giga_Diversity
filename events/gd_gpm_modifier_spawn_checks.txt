@@ -47,31 +47,31 @@ if = {
 		
 		## NUKED PLANETS 
 		if = {
-			limit = { gpm_is_planet_class_nuked = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			limit = { gpm_is_planet_class_nuked = yes gpm_is_planet_fallen_empire = no }
 			planet_event = { id = gpm_engine.50 }
 		}
 		
 		## NORMAL HABITABLE PLANETS (Colonizable standard planets)
 		if = {
-			limit = { gpm_is_planet_class_normal_habitable = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			limit = { gpm_is_planet_class_normal_habitable = yes gpm_is_planet_fallen_empire = no }
 			planet_event = { id = gpm_engine.60 }
 		}
 		
 		## CITY PLANETS 
 		if = {
-			limit = { gpm_is_planet_class_city = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			limit = { gpm_is_planet_class_city = yes gpm_is_planet_fallen_empire = no }
 			planet_event = { id = gpm_engine.70 }
 		}
 		
 		## MACHINE PLANETS 
 		if = {
-			limit = { gpm_is_planet_class_machine = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			limit = { gpm_is_planet_class_machine = yes gpm_is_planet_fallen_empire = no }
 			planet_event = { id = gpm_engine.80 }
 		}
 		
 		## HIVE PLANETS 
 		if = {
-			limit = { gpm_is_planet_class_hive = yes NOT = { gpm_is_planet_fallen_empire = yes } }
+			limit = { gpm_is_planet_class_hive = yes gpm_is_planet_fallen_empire = no }
 			planet_event = { id = gpm_engine.90 }
 		}
 		

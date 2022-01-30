@@ -371,7 +371,7 @@ planet_event = {
 			add_deposit = d_eyeball_site
 		}
 		if = {
-			limit = { NOT = { is_planet_class = pc_city } is_pd_arcology = no has_planet_flag = pdaquapicture NOT = { OR = { has_planet_flag = hotaquatic has_planet_flag = coldaquatic } } }
+			limit = { NOT = { is_planet_class = pc_city } is_pd_arcology = no has_planet_flag = pdaquapicture NOR = { has_planet_flag = hotaquatic has_planet_flag = coldaquatic } }
 			set_planet_entity = { picture = pc_aquatic }
 		}
 		if = {

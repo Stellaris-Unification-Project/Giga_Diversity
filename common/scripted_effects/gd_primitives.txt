@@ -44,7 +44,7 @@ generate_sanctuary_primitives_on_planet = {
 	}
 	set_owner = last_created_country
 	set_capital = yes
-	while = { count = 24 create_pop = { species = last_created } }
+	while = { count = 24 create_pop = { species = last_created_species } }
 	add_building = building_primitive_farm
 	add_building = building_primitive_factory
 	add_building = building_primitive_mine
@@ -56,8 +56,8 @@ generate_sanctuary_primitives_on_planet = {
 		count = 2
 		create_army = {
 			name = "Norhasulao Defender"
-			owner = last_created
-			species = last_created
+			owner = last_created_country
+			species = last_created_species
 			type = "excognitor_defender"
 		}
 	}

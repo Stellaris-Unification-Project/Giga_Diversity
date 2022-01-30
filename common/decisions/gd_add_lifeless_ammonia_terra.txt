@@ -16,8 +16,10 @@ decision_ll_ammonia_terraform_aa = {
 	}
 	potential = {
 		has_global_flag = planetarydiversityexotics
-		NOT = { has_global_flag = planetaryterraformimpossible }
-		NOT = { has_global_flag = terraform_toxic_disabled }
+		NOR = {
+			has_global_flag = planetaryterraformimpossible
+			has_global_flag = terraform_toxic_disabled
+		}
 			#If everything is coded correctly in PD then terraforming_candidate is always replaced with hab_terraforming_candidate. checking for both in case there are any errors in code
 		NOR = {
 			has_modifier = terraforming_candidate
@@ -61,8 +63,10 @@ decision_ll_ammonia_terraform_dci = {
 	}
 	potential = {
 		has_global_flag = planetarydiversityexotics
-		NOT = { has_global_flag = planetaryterraformimpossible }
-		NOT = { has_global_flag = terraform_barren_disabled }
+		NOR = {
+			has_global_flag = planetaryterraformimpossible
+			has_global_flag = terraform_barren_disabled
+		}
 			#If everything is coded correctly in PD then terraforming_candidate is always replaced with hab_terraforming_candidate. checking for both in case there are any errors in code
 		NOT = {
 			has_modifier = terraforming_candidate

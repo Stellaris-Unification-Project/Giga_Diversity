@@ -1332,7 +1332,7 @@ can_destroy_planet_with_PLANET_KILLER_CRACKER = {
 					NOT = { exists = space_owner }
 					AND = {
 						exists = space_owner
-						space_owner = { is_same_value = from.owner }
+						is_owned_by = from.owner
 					}
 				}
 				OR = {
@@ -1437,8 +1437,7 @@ is_planet_habitable = {
 		is_planet_class = pc_storm
 		is_planet_class = pc_megaflora
 		is_planet_class = pc_irradiated
-		is_planet_class = pc_ringworld_habitable
-		is_planet_class = pc_habitat
+		is_artificial = yes
 		is_planet_class = pc_megafloratol
 		is_planet_class = pc_aquatic
 		is_planet_class = pc_graveyard
